@@ -12,73 +12,27 @@
 	<target name="install">
 		<antcall target="install-base-project-from-tar" />
 		<antcall target="install-base-project-from-plain-folder" />
-		
-		<!-- no dependency -->
 		<antcall target="install-infoglue-cms-io" />
 		<antcall target="install-infoglue-cms-net" />
 		<antcall target="install-infoglue-codeeditor" />
 		<antcall target="install-infoglue-common" />
 		<antcall target="install-infoglue-taglib" />
-
-		<!-- cms-net -->
 		<antcall target="install-infoglue-opentree" />
-
-		<!-- cms -->
 		<antcall target="install-infoglue-cms-controllers-usecases" />
 		<antcall target="install-infoglue-cms-interceptors" />
 		<antcall target="install-infoglue-cms-security" />
 		<antcall target="install-infoglue-deliver-util-webloggers" />
 		<antcall target="install-infoglue-inputhandlers" />
 		<antcall target="install-infoglue-deliver-portal" />
-		<!--
-		-->
-
-		<!-- cms + interceptors -->
 		<antcall target="install-infoglue-cms-jobs" />
-		<!--
-		-->
-
-		<!-- cms + common -->
 		<antcall target="install-infoglue-cms-webservices" />
-		<!--
-		-->
-
-		<!-- cms + cms-net + cms-controllers-usecases -->
 		<antcall target="install-infoglue-cms-treeservice" />
-		<!--
-		-->
-
-		<!-- cms + webservices + cms-io -->
 		<antcall target="install-infoglue-cms-workflow" />
-		<!--
-		-->
-
-		<!-- cms + cms-workflow + taglib -->
 		<antcall target="install-infoglue-cms-taglib" />
-		<!--
-		-->
-
-		<!-- cms + cms-interceptors -->
 		<antcall target="install-infoglue-deliver-jobs" />
-		<!--
-		-->
-
-		<!-- cms + deliver-util-webloggers -->
 		<antcall target="install-infoglue-deliver-services" />
-		<!--
-		-->
-		
-		<!-- cms + inputhandlers + cms-jobs + cms-treeservice + cms-io + cms-controllers-usecases + deliver-portal -->
 		<antcall target="install-infoglue-actions" />
-		<!--
-		-->
-
-		<!-- cms + cms-webservices + taglib + cms-io -->
 		<antcall target="install-infoglue-deliver-taglib" />
-		<!--
-		-->
-
-		<!-- cms-io + opentree + taglib -->
 		<antcall target="install-infoglue-cms" />
 	</target>
 	<target name="install-base-project-from-tar" if="base.path.tar">
