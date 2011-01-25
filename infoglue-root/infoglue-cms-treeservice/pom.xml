@@ -1,0 +1,39 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<artifactId>infoglue-root</artifactId>
+		<groupId>org.infoglue</groupId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>infoglue-cms-treeservice</artifactId>
+	<packaging>jar</packaging>
+	<name>Infoglue CMS Treeservice</name>
+	<version>0.0.1-SNAPSHOT</version>
+	<dependencies>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.castor</groupId>
+			<artifactId>castor-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.infoglue</groupId>
+			<artifactId>infoglue-cms</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.infoglue</groupId>
+			<artifactId>infoglue-cms-net</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.infoglue</groupId>
+			<artifactId>infoglue-cms-controllers-usecases</artifactId>
+		</dependency>
+	</dependencies>
+</project>
