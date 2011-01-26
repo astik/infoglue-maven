@@ -32,6 +32,7 @@
 		<module>infoglue-deliver-taglib</module>
 		<module>infoglue-test</module>
 		<module>infoglue-webapp-deliver</module>
+		<module>infoglue-webapp-cms</module>
 	</modules>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
