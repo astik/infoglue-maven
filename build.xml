@@ -4,13 +4,16 @@
     </description>
 	<property file="build.properties" />
 	<property name="src.path" value="build/infoglue/src/java" />
+	<property name="src.conf.path" value="build/infoglue/conf" />
 	<property name="src.test.path" value="build/infoglue/test/java" />
 	<property name="build.path" value="build" />
 	<target name="clean">
 		<delete dir="${dst.path}/infoglue-root" />
 	</target>
 	<target name="install">
+		<!--
 		<antcall target="install-base-project-from-tar" />
+		-->
 		<antcall target="install-base-project-from-plain-folder" />
 		<antcall target="install-infoglue-cms-io" />
 		<antcall target="install-infoglue-cms-net" />
@@ -34,11 +37,15 @@
 		<antcall target="install-infoglue-actions" />
 		<antcall target="install-infoglue-deliver-taglib" />
 		<antcall target="install-infoglue-cms" />
+		<antcall target="install-infoglue-test" />
+		<antcall target="install-infoglue-webapp-deliver" />
 	</target>
+	<!--
 	<target name="install-base-project-from-tar" if="base.path.tar">
 		<echo message="Installing base project from tar archive" />
 		<untar src="${base.path.tar}" dest="${dst.path}" compression="gzip" />
 	</target>
+	-->
 	<target name="install-base-project-from-plain-folder" if="base.path.folder">
 		<echo message="Installing base project from plain folder" />
 		<copy todir="${dst.path}/${base.path.folder}">
@@ -357,16 +364,6 @@
 			</fileset>
 		</move>
 	</target>
-
-
-
-
-
-
-
-
-	
-			
 	<target name="install-infoglue-cms">
 		<echo message="Installing infoglue-cms" />
 		<move todir="${dst.path}/infoglue-root/infoglue-cms/src/main/java">
@@ -387,6 +384,22 @@
 				<include name="**/FakeHttpSession.java" />
 				<include name="**/FakeServletContext.java" />
 				<include name="**/FakeFilterConfig.java" />
+			</fileset>
+		</move>
+	</target>
+	<target name="install-infoglue-test">
+		<echo message="Installing infoglue-test" />
+		<move todir="${dst.path}/infoglue-root/infoglue-test/src/test/java">
+			<fileset dir="${src.test.path}">
+				<include name="**/*.java" />
+			</fileset>
+		</move>
+	</target>
+	<target name="install-infoglue-webapp-deliver">
+		<echo message="Installing infoglue-webapp-deliver" />
+		<move todir="${dst.path}/infoglue-root/infoglue-webapp-deliver/src/main/webapp/WEB-INF/tld">
+			<fileset dir="${src.conf.path}/tld">
+				<include name="**/infoglue-*.tld" />
 			</fileset>
 		</move>
 	</target>
