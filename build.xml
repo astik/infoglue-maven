@@ -404,11 +404,15 @@
 				<include name="**/infoglue-*.tld" />
 			</fileset>
 		</move>
+		<move tofile="${dst.path}/infoglue-root/infoglue-webapp-deliver/src/main/webapp/WEB-INF/web.xml" file="${infoglue.conf.path}/deliver-web.xml" failonerror="false" />
 	</target>
 	<target name="install-infoglue-webapp-cms">
 		<echo message="Installing infoglue-webapp-cms" />
 		<move todir="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/webapp/">
-			<fileset dir="${infoglue.src.webapp.path}" />
+			<fileset dir="${infoglue.src.webapp.path}">
+				<include name="**/*" />
+			</fileset>
 		</move>
+		<move tofile="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/webapp/WEB-INF/web.xml" file="${infoglue.conf.path}/cms-web.xml" failonerror="false" />
 	</target>
 </project>
