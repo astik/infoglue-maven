@@ -10,4 +10,40 @@
 	<packaging>war</packaging>
 	<name>Infoglue Webapp CMS</name>
 	<version>0.0.1-SNAPSHOT</version>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<filters>
+						<filter>src/main/filters/filter.properties</filter>
+					</filters>
+					<webResources>
+						<resource>
+							<filtering>true</filtering>
+							<directory>src/main/webappResources</directory>
+						</resource>
+					</webResources>
+				</configuration>
+			</plugin>
+		</plugins>
+		<filters>
+			<filter>src/main/filters/filter.properties</filter>
+		</filters>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>org.infoglue</groupId>
+			<artifactId>infoglue-cms</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.infoglue</groupId>
+			<artifactId>infoglue-cms-treeservice</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.infoglue</groupId>
+			<artifactId>infoglue-deliver-jobs</artifactId>
+		</dependency>
+	</dependencies>
 </project>

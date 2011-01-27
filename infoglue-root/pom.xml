@@ -74,7 +74,23 @@
 				<artifactId>maven-resources-plugin</artifactId>
 				<configuration>
 					<encoding>ISO-8859-1</encoding>
+					<delimiters>
+						<delimiter>${*}</delimiter>
+						<delimiter>@*@</delimiter>
+					</delimiters>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 		<pluginManagement>
@@ -494,7 +510,11 @@
 				<artifactId>infoglue-common</artifactId>
 				<version>${infoglue.version}</version>
 			</dependency>
-			<!-- infoglue-deliver-jobs -->
+			<dependency>
+				<groupId>org.infoglue</groupId>
+				<artifactId>infoglue-deliver-jobs</artifactId>
+				<version>${infoglue.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>org.infoglue</groupId>
 				<artifactId>infoglue-deliver-portal</artifactId>

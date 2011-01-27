@@ -399,20 +399,30 @@
 	</target>
 	<target name="install-infoglue-webapp-deliver">
 		<echo message="Installing infoglue-webapp-deliver" />
-		<move todir="${dst.path}/infoglue-root/infoglue-webapp-deliver/src/main/webapp/WEB-INF/tld">
+		<copy todir="${dst.path}/infoglue-root/infoglue-webapp-deliver/src/main/webapp/WEB-INF/tld">
 			<fileset dir="${infoglue.conf.path}/tld">
-				<include name="**/infoglue-*.tld" />
+				<include name="**/*.tld" />
 			</fileset>
-		</move>
-		<move tofile="${dst.path}/infoglue-root/infoglue-webapp-deliver/src/main/webapp/WEB-INF/web.xml" file="${infoglue.conf.path}/deliver-web.xml" failonerror="false" />
+		</copy>
+		<move tofile="${dst.path}/infoglue-root/infoglue-webapp-deliver/src/main/webappResources/WEB-INF/web.xml" file="${infoglue.conf.path}/deliver-web.xml" failonerror="false" />
+		<move tofile="${dst.path}/infoglue-root/infoglue-webapp-deliver/src/main/webapp/index.html" file="${infoglue.src.webapp.path}/index-deliver.html" failonerror="false" />
 	</target>
 	<target name="install-infoglue-webapp-cms">
 		<echo message="Installing infoglue-webapp-cms" />
+		<copy todir="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/webapp/WEB-INF/tld">
+			<fileset dir="${infoglue.conf.path}/tld">
+				<include name="**/*.tld" />
+			</fileset>
+		</copy>
 		<move todir="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/webapp/">
 			<fileset dir="${infoglue.src.webapp.path}">
 				<include name="**/*" />
 			</fileset>
 		</move>
-		<move tofile="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/webapp/WEB-INF/web.xml" file="${infoglue.conf.path}/cms-web.xml" failonerror="false" />
+		<move tofile="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/webappResources/WEB-INF/web.xml" file="${infoglue.conf.path}/cms-web.xml" failonerror="false" />
+		<move tofile="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/webapp/index.html" file="${infoglue.src.webapp.path}/index-cms.html" failonerror="false" />
+		<move todir="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/resources/" file="${infoglue.conf.path}/cms.properties" failonerror="false" />
+		<move todir="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/resources/" file="${infoglue.conf.path}/InfoGlueAuthorizationParameters.properties" failonerror="false" />
+		<move todir="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/resources/" file="${infoglue.conf.path}/quartz.properties" failonerror="false" />
 	</target>
 </project>
