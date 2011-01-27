@@ -11,9 +11,13 @@
 	<name>Infoglue Code Editor</name>
 	<version>0.0.1-SNAPSHOT</version>
 	<dependencies>
-		<dependency>
-			<groupId>netscape.javascript</groupId>
-			<artifactId>netscape-javascript</artifactId>
-		</dependency>
+<dependency>
+    <groupId>com.sun.jdk.applet</groupId>
+    <artifactId>plugin</artifactId>
+    <version>1.5</version>
+    <scope>system</scope>
+    <systemPath>${java.home}/lib/plugin.jar</systemPath>
+</dependency>
 	</dependencies>
 </project>
+
