@@ -30,13 +30,16 @@
 		<module>infoglue-deliver-services</module>
 		<module>infoglue-deliver-util-webloggers</module>
 		<module>infoglue-deliver-taglib</module>
-		<module>infoglue-test</module>
 		<module>infoglue-webapp-deliver</module>
 		<module>infoglue-webapp-cms</module>
+<!-- 
+		<module>infoglue-test</module>
+-->
 	</modules>
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
 		<infoglue.version>0.0.1-SNAPSHOT</infoglue.version>
+		<pluto.version>1.0.1</pluto.version>
 	</properties>
 	<build>
 		<finalName>${project.artifactId}</finalName>
@@ -65,7 +68,7 @@
 				<configuration>
 					<source>1.5</source>
 					<target>1.5</target>
-					<encoding>UTF-8</encoding>
+					<encoding>ISO-8859-1</encoding>
 					<debug>true</debug>
 				</configuration>
 			</plugin>
@@ -206,6 +209,12 @@
 				<groupId>commons-fileupload</groupId>
 				<artifactId>commons-fileupload</artifactId>
 				<version>1.1</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-digester</groupId>
+				<artifactId>commons-digester</artifactId>
+				<version>2.1</version>
+				<scope>runtime</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.commons</groupId>
@@ -376,29 +385,19 @@
 			</dependency>
 			<!-- ************************* PORTAL *************************** -->
 			<dependency>
-				<groupId>org.apache.pluto</groupId>
-				<artifactId>pluto</artifactId>
-				<version>1.0.1</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.pluto</groupId>
-				<artifactId>pluto-portal</artifactId>
-				<version>1.0.1</version>
-			</dependency>
-			<dependency>
 				<groupId>javax.portlet</groupId>
 				<artifactId>portlet-api</artifactId>
 				<version>1.0</version>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.pluto</groupId>
-				<artifactId>pluto-descriptors</artifactId>
-				<version>1.0.1</version>
+				<artifactId>pluto</artifactId>
+				<version>${pluto.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.pluto</groupId>
-				<artifactId>pluto-deploy</artifactId>
-				<version>1.0.1</version>
+				<artifactId>pluto-portal</artifactId>
+				<version>${pluto.version}</version>
 			</dependency>
 			<!-- ************************* OTHER **************************** -->
 			<dependency>
@@ -429,7 +428,7 @@
 			<dependency>
 				<groupId>com.ettrema</groupId>
 				<artifactId>milton-api</artifactId>
-				<version>1.5.4</version>
+				<version>1.5.6</version>
 			</dependency>
 			<dependency>
 				<groupId>org.netbeans.api</groupId>
@@ -439,12 +438,7 @@
 			<dependency>
 				<groupId>com.caucho</groupId>
 				<artifactId>resin-quercus</artifactId>
-				<version>3.2.1</version>
-			</dependency>
-			<dependency>
-				<groupId>com.caucho</groupId>
-				<artifactId>resin</artifactId>
-				<version>4.0.14</version>
+				<version>4.0.13</version>
 			</dependency>
 			<!-- ************************* INFOGLUE ************************* -->
 			<dependency>
@@ -568,8 +562,8 @@
 			<url>http://bits.netbeans.org/maven2</url>
 		</repository>
 		<repository>
-			<id>caucho</id>
-			<url>http://caucho.com/m2</url>
+			<id>jahia</id>
+			<url>http://maven.jahia.org/maven2</url>
 		</repository>
 		<repository>
 			<id>ettrema</id>

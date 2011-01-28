@@ -44,26 +44,6 @@
 			<artifactId>osworkflow</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.pluto</groupId>
-			<artifactId>pluto</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.pluto</groupId>
-			<artifactId>pluto-portal</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>javax.portlet</groupId>
-			<artifactId>portlet-api</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.pluto</groupId>
-			<artifactId>pluto-descriptors</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.pluto</groupId>
-			<artifactId>pluto-deploy</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>org.apache.lucene</groupId>
 			<artifactId>lucene-core</artifactId>
 		</dependency>
@@ -204,12 +184,20 @@
 			<artifactId>resin-quercus</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.caucho</groupId>
-			<artifactId>resin</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>opensymphony</groupId>
 			<artifactId>propertyset</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.portlet</groupId>
+			<artifactId>portlet-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.pluto</groupId>
+			<artifactId>pluto</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.pluto</groupId>
+			<artifactId>pluto-portal</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.infoglue</groupId>

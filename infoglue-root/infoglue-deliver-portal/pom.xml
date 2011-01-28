@@ -15,5 +15,9 @@
 			<groupId>org.infoglue</groupId>
 			<artifactId>infoglue-cms</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+		</dependency>
 	</dependencies>
 </project>
