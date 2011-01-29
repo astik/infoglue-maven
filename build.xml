@@ -420,6 +420,11 @@
 				<include name="**/*" />
 			</fileset>
 		</copy>
+		<copy todir="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/webapp/WEB-INF/data">
+			<fileset dir="${infoglue.conf.path}/data">
+				<include name="**/*" />
+			</fileset>
+		</copy>
 		<move todir="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/webapp/">
 			<fileset dir="${infoglue.src.webapp.path}">
 				<include name="**/*" />
