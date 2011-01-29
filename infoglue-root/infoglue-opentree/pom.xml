@@ -24,8 +24,9 @@
 			<artifactId>infoglue-cms-net</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>netscape.javascript</groupId>
-			<artifactId>netscape-javascript</artifactId>
+			<!-- plugin.jar provides the netscape.javascript.JSObject class -->
+			<groupId>com.sun.jdk.applet</groupId>
+			<artifactId>plugin</artifactId>
 		</dependency>
 	</dependencies>
 </project>

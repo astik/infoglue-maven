@@ -15,9 +15,6 @@
 			<!-- plugin.jar provides the netscape.javascript.JSObject class -->
 			<groupId>com.sun.jdk.applet</groupId>
 			<artifactId>plugin</artifactId>
-			<version>1.5</version>
-			<scope>system</scope>
-			<systemPath>${java.home}/lib/plugin.jar</systemPath>
 		</dependency>
 	</dependencies>
 </project>

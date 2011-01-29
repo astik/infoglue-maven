@@ -32,9 +32,7 @@
 		<module>infoglue-deliver-taglib</module>
 		<module>infoglue-webapp-deliver</module>
 		<module>infoglue-webapp-cms</module>
-<!-- 
-		<module>infoglue-test</module>
--->
+		<!-- <module>infoglue-test</module> -->
 	</modules>
 	<properties>
 		<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
@@ -399,6 +397,16 @@
 				<artifactId>pluto-portal</artifactId>
 				<version>${pluto.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>org.apache.pluto</groupId>
+				<artifactId>pluto-descriptors</artifactId>
+				<version>${pluto.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.pluto</groupId>
+				<artifactId>pluto-deploy</artifactId>
+				<version>${pluto.version}</version>
+			</dependency>
 			<!-- ************************* OTHER **************************** -->
 			<dependency>
 				<groupId>ant</groupId>
@@ -421,11 +429,6 @@
 				<version>unknown</version>
 			</dependency>
 			<dependency>
-				<groupId>netscape.javascript</groupId>
-				<artifactId>netscape-javascript</artifactId>
-				<version>unknown</version>
-			</dependency>
-			<dependency>
 				<groupId>com.ettrema</groupId>
 				<artifactId>milton-api</artifactId>
 				<version>1.5.6</version>
@@ -439,6 +442,14 @@
 				<groupId>com.caucho</groupId>
 				<artifactId>resin-quercus</artifactId>
 				<version>4.0.13</version>
+			</dependency>
+			<dependency>
+				<!-- plugin.jar provides the netscape.javascript.JSObject class -->
+				<groupId>com.sun.jdk.applet</groupId>
+				<artifactId>plugin</artifactId>
+				<version>1.5</version>
+				<scope>system</scope>
+				<systemPath>${java.home}/lib/plugin.jar</systemPath>
 			</dependency>
 			<!-- ************************* INFOGLUE ************************* -->
 			<dependency>
@@ -548,26 +559,44 @@
 		<repository>
 			<id>central</id>
 			<url>http://repo2.maven.org/maven2/</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
 		</repository>
 		<repository>
 			<id>jboss</id>
 			<url>http://repository.jboss.org/maven2/</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
 		</repository>
 		<repository>
 			<id>atlassian</id>
 			<url>https://m2proxy.atlassian.com/repository/public</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
 		</repository>
 		<repository>
 			<id>netbeans</id>
 			<url>http://bits.netbeans.org/maven2</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
 		</repository>
 		<repository>
 			<id>jahia</id>
 			<url>http://maven.jahia.org/maven2</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
 		</repository>
 		<repository>
 			<id>ettrema</id>
 			<url>http://www.ettrema.com/maven2</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
 		</repository>
 	</repositories>
 	<!-- TODO scm -->
