@@ -488,7 +488,11 @@
 				<artifactId>infoglue-cms-net</artifactId>
 				<version>${infoglue.version}</version>
 			</dependency>
-			<!-- infoglue-cms-security -->
+			<dependency>
+				<groupId>org.infoglue</groupId>
+				<artifactId>infoglue-cms-security</artifactId>
+				<version>${infoglue.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>org.infoglue</groupId>
 				<artifactId>infoglue-taglib</artifactId>

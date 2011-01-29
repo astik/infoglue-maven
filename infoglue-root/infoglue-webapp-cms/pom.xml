@@ -60,6 +60,14 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.infoglue</groupId>
+			<artifactId>infoglue-actions</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.infoglue</groupId>
+			<artifactId>infoglue-cms-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.infoglue</groupId>
 			<artifactId>infoglue-cms</artifactId>
 		</dependency>
 		<dependency>
