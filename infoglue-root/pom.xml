@@ -10,10 +10,9 @@
 		<module>propertyset</module>
 		<module>infoglue-cms-io</module>
 		<module>infoglue-cms-net</module>
-		<module>infoglue-codeeditor</module>
+		<module>infoglue-cms-util-graphics</module>
 		<module>infoglue-common</module>
 		<module>infoglue-taglib</module>
-		<module>infoglue-opentree</module>
 		<module>infoglue-cms</module>
 		<module>infoglue-cms-controllers-usecases</module>
 		<module>infoglue-cms-treeservice</module>
@@ -96,6 +95,11 @@
 		</plugins>
 		<pluginManagement>
 			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-source-plugin</artifactId>
+					<version>2.1.2</version>
+				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-resources-plugin</artifactId>
@@ -424,11 +428,6 @@
 				<version>0.9.4</version>
 			</dependency>
 			<dependency>
-				<groupId>com.mullassery</groupId>
-				<artifactId>imaging</artifactId>
-				<version>unknown</version>
-			</dependency>
-			<dependency>
 				<groupId>com.ettrema</groupId>
 				<artifactId>milton-api</artifactId>
 				<version>1.5.6</version>
@@ -442,14 +441,6 @@
 				<groupId>com.caucho</groupId>
 				<artifactId>resin-quercus</artifactId>
 				<version>4.0.13</version>
-			</dependency>
-			<dependency>
-				<!-- plugin.jar provides the netscape.javascript.JSObject class -->
-				<groupId>com.sun.jdk.applet</groupId>
-				<artifactId>plugin</artifactId>
-				<version>1.5</version>
-				<scope>system</scope>
-				<systemPath>${java.home}/lib/plugin.jar</systemPath>
 			</dependency>
 			<!-- ************************* INFOGLUE ************************* -->
 			<dependency>
@@ -467,7 +458,6 @@
 				<artifactId>infoglue-cms-controllers-usecases</artifactId>
 				<version>${infoglue.version}</version>
 			</dependency>
-			<!-- infoglue-cms-imageediting -->
 			<dependency>
 				<groupId>org.infoglue</groupId>
 				<artifactId>infoglue-cms-interceptors</artifactId>
@@ -495,12 +485,17 @@
 			</dependency>
 			<dependency>
 				<groupId>org.infoglue</groupId>
-				<artifactId>infoglue-taglib</artifactId>
+				<artifactId>infoglue-cms-taglib</artifactId>
 				<version>${infoglue.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.infoglue</groupId>
 				<artifactId>infoglue-cms-treeservice</artifactId>
+				<version>${infoglue.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.infoglue</groupId>
+				<artifactId>infoglue-cms-util-graphics</artifactId>
 				<version>${infoglue.version}</version>
 			</dependency>
 			<dependency>
@@ -513,7 +508,6 @@
 				<artifactId>infoglue-cms-workflow</artifactId>
 				<version>${infoglue.version}</version>
 			</dependency>
-			<!-- infoglue-codeeditor -->
 			<dependency>
 				<groupId>org.infoglue</groupId>
 				<artifactId>infoglue-common</artifactId>
@@ -543,11 +537,6 @@
 			</dependency>
 			<dependency>
 				<groupId>org.infoglue</groupId>
-				<artifactId>infoglue-opentree</artifactId>
-				<version>${infoglue.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.infoglue</groupId>
 				<artifactId>infoglue-taglib</artifactId>
 				<version>${infoglue.version}</version>
 			</dependency>
@@ -555,6 +544,11 @@
 				<groupId>opensymphony</groupId>
 				<artifactId>propertyset</artifactId>
 				<version>1.4</version>
+			</dependency>
+			<dependency>
+				<groupId>com.thebuzzmedia</groupId>
+				<artifactId>imgscalr-lib</artifactId>
+				<version>2.0</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
@@ -577,6 +571,13 @@
 		<repository>
 			<id>atlassian</id>
 			<url>https://m2proxy.atlassian.com/repository/public</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>TheBuzzMedia</id>
+			<url>http://maven.thebuzzmedia.com</url>
 			<snapshots>
 				<enabled>false</enabled>
 			</snapshots>

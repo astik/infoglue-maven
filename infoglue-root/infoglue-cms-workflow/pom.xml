@@ -25,11 +25,11 @@
 		</dependency>
 		<dependency>
 			<groupId>org.infoglue</groupId>
-			<artifactId>infoglue-cms</artifactId>
+			<artifactId>infoglue-cms-webservices</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.infoglue</groupId>
-			<artifactId>infoglue-cms-io</artifactId>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
 		</dependency>
 	</dependencies>
 </project>

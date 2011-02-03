@@ -25,15 +25,11 @@
 		</dependency>
 		<dependency>
 			<groupId>org.infoglue</groupId>
-			<artifactId>infoglue-cms</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.infoglue</groupId>
 			<artifactId>infoglue-common</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.infoglue</groupId>
-			<artifactId>infoglue-cms-workflow</artifactId>
+			<artifactId>infoglue-cms</artifactId>
 		</dependency>
 	</dependencies>
 </project>

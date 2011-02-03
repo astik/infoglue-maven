@@ -40,14 +40,6 @@
 			<artifactId>dom4j</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.mullassery</groupId>
-			<artifactId>imaging</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.infoglue</groupId>
-			<artifactId>infoglue-cms</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>org.infoglue</groupId>
 			<artifactId>infoglue-inputhandlers</artifactId>
 		</dependency>
@@ -61,15 +53,11 @@
 		</dependency>
 		<dependency>
 			<groupId>org.infoglue</groupId>
-			<artifactId>infoglue-cms-io</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.infoglue</groupId>
-			<artifactId>infoglue-cms-controllers-usecases</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.infoglue</groupId>
 			<artifactId>infoglue-deliver-portal</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.infoglue</groupId>
+			<artifactId>infoglue-cms-util-graphics</artifactId>
 		</dependency>
 	</dependencies>
 </project>

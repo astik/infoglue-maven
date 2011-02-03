@@ -19,9 +19,5 @@
 			<groupId>org.infoglue</groupId>
 			<artifactId>infoglue-deliver-util-webloggers</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.infoglue</groupId>
-			<artifactId>infoglue-cms</artifactId>
-		</dependency>
 	</dependencies>
 </project>

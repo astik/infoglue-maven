@@ -205,10 +205,6 @@
 		</dependency>
 		<dependency>
 			<groupId>org.infoglue</groupId>
-			<artifactId>infoglue-opentree</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.infoglue</groupId>
 			<artifactId>infoglue-taglib</artifactId>
 		</dependency>
 	</dependencies>

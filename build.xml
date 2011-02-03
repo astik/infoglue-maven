@@ -12,17 +12,17 @@
 		<delete dir="${dst.path}/infoglue-root" />
 	</target>
 	<target name="install">
-		<!--
-		<antcall target="install-base-project-from-tar" />
-		-->
+<!--
+		<antcall target="reset-install-infoglue-cms" />
+-->
 		<antcall target="install-base-project-from-plain-folder" />
 		<antcall target="install-infoglue-cms-io" />
 		<antcall target="install-infoglue-cms-net" />
-		<antcall target="install-infoglue-codeeditor" />
 		<antcall target="install-infoglue-common" />
+		<antcall target="install-infoglue-cms-util-graphics" />
 		<antcall target="install-infoglue-taglib" />
-		<antcall target="install-infoglue-opentree" />
 		<antcall target="install-infoglue-cms-controllers-usecases" />
+		<antcall target="install-infoglue-cms-workflow" />
 		<antcall target="install-infoglue-cms-interceptors" />
 		<antcall target="install-infoglue-cms-security" />
 		<antcall target="install-infoglue-deliver-util-webloggers" />
@@ -31,7 +31,6 @@
 		<antcall target="install-infoglue-cms-jobs" />
 		<antcall target="install-infoglue-cms-webservices" />
 		<antcall target="install-infoglue-cms-treeservice" />
-		<antcall target="install-infoglue-cms-workflow" />
 		<antcall target="install-infoglue-cms-taglib" />
 		<antcall target="install-infoglue-deliver-jobs" />
 		<antcall target="install-infoglue-deliver-services" />
@@ -42,12 +41,29 @@
 		<antcall target="install-infoglue-webapp-deliver" />
 		<antcall target="install-infoglue-webapp-cms" />
 	</target>
-	<!--
-	<target name="install-base-project-from-tar" if="base.path.tar">
-		<echo message="Installing base project from tar archive" />
-		<untar src="${base.path.tar}" dest="${dst.path}" compression="gzip" />
+	<target name="reset-install-infoglue-cms">
+		<echo message="Reset infoglue-cms installation" />
+		<move todir="${infoglue.test.java.path}/org/infoglue/cms/util">
+			<fileset dir="${dst.path}/infoglue-root/infoglue-cms/src/main/java/org/infoglue/cms/util">
+				<include name="**/FakeHttpServletRequest.java" />
+				<include name="**/FakeHttpServletResponse.java" />
+				<include name="**/FakeHttpSession.java" />
+				<include name="**/FakeServletContext.java" />
+				<include name="**/FakeFilterConfig.java" />
+			</fileset>
+		</move>
+		<move todir="${infoglue.src.java.path}">
+			<fileset dir="${dst.path}/infoglue-root/infoglue-cms/src/main/java">
+				<include name="**/*.java" />
+			</fileset>
+		</move>
+		<move todir="${infoglue.src.java.path}">
+			<fileset dir="${dst.path}/infoglue-root/infoglue-cms/src/main/resources">
+				<include name="**/*.properties" />
+				<include name="**/*.xml" />
+			</fileset>
+		</move>
 	</target>
-	-->
 	<target name="install-base-project-from-plain-folder" if="base.path.folder">
 		<echo message="Installing base project from plain folder" />
 		<copy todir="${dst.path}/${base.path.folder}">
@@ -56,177 +72,125 @@
 	</target>
 	<target name="install-infoglue-cms-net">
 		<echo message="Installing infoglue-cms-net" />
-		<move todir="${dst.path}/infoglue-root/infoglue-cms-net/src/main/java/org/infoglue/cms/net">
-			<fileset dir="${infoglue.src.java.path}/org/infoglue/cms/net">
+		<property name="subpath" value="org/infoglue/cms/net" />
+		<move todir="${dst.path}/infoglue-root/infoglue-cms-net/src/main/java/${subpath}">
+			<fileset dir="${infoglue.src.java.path}/${subpath}">
 				<include name="**/*.java" />
-			</fileset>
-		</move>
-	</target>
-	<target name="install-infoglue-opentree">
-		<echo message="Installing infoglue-opentree" />
-		<move todir="${dst.path}/infoglue-root/infoglue-opentree/src/main/java/org/infoglue/cms/plugins/opentree">
-			<fileset dir="${infoglue.src.java.path}/org/infoglue/cms/plugins/opentree">
-				<include name="**/*.java" />
-			</fileset>
-		</move>
-		<move todir="${dst.path}/infoglue-root/infoglue-opentree/src/main/java/org/infoglue/cms/treeservice">
-			<fileset dir="${infoglue.src.java.path}/org/infoglue/cms/treeservice">
-				<include name="**/JServiceBuilder.java" />
-				<include name="**/RequestDispatcher.java" />
-				<include name="**/NodeService.java" />
 			</fileset>
 		</move>
 	</target>
 	<target name="install-infoglue-taglib">
 		<echo message="Installing infoglue-taglib" />
-		<move todir="${dst.path}/infoglue-root/infoglue-taglib/src/main/java/org/infoglue/deliver/taglib">
-			<fileset dir="${infoglue.src.java.path}/org/infoglue/deliver/taglib">
+		<property name="subpath" value="org/infoglue/deliver/taglib" />
+		<move todir="${dst.path}/infoglue-root/infoglue-taglib/src/main/java/${subpath}">
+			<fileset dir="${infoglue.src.java.path}/${subpath}">
 				<include name="**/AbstractTag.java" />
 			</fileset>
 		</move>
 	</target>
 	<target name="install-infoglue-cms-io">
 		<echo message="Installing infoglue-cms-io" />
-		<move todir="${dst.path}/infoglue-root/infoglue-cms-io/src/main/java/org/infoglue/cms/io">
-			<fileset dir="${infoglue.src.java.path}/org/infoglue/cms/io">
-				<include name="**/FileHelper.java" />
+		<property name="subpath" value="org/infoglue/cms/io" />
+		<move todir="${dst.path}/infoglue-root/infoglue-cms-io/src/main/java/${subpath}">
+			<fileset dir="${infoglue.src.java.path}/${subpath}">
+				<include name="**/*.java" />
 			</fileset>
 		</move>
 	</target>
 	<target name="install-infoglue-deliver-jobs">
 		<echo message="Installing infoglue-deliver-jobs" />
-		<move todir="${dst.path}/infoglue-root/infoglue-deliver-jobs/src/main/java/org/infoglue/deliver/jobs">
-			<fileset dir="${infoglue.src.java.path}/org/infoglue/deliver/jobs">
+		<property name="subpath" value="org/infoglue/deliver/jobs" />
+		<move todir="${dst.path}/infoglue-root/infoglue-deliver-jobs/src/main/java/${subpath}">
+			<fileset dir="${infoglue.src.java.path}/${subpath}">
 				<include name="**/*.java" />
 			</fileset>
 		</move>
 	</target>
 	<target name="install-infoglue-cms-treeservice">
 		<echo message="Installing infoglue-cms-treeservice" />
-		<move todir="${dst.path}/infoglue-root/infoglue-cms-treeservice/src/main/java/com/frovi/ss/Tree">
-			<fileset dir="${infoglue.src.java.path}/com/frovi/ss/tree">
+		<property name="subpath" value="com/frovi/ss/Tree" />
+		<move todir="${dst.path}/infoglue-root/infoglue-cms-treeservice/src/main/java/${subpath}">
+			<fileset dir="${infoglue.src.java.path}/${subpath}">
 				<include name="**/*.java" />
 			</fileset>
 		</move>
-		<move todir="${dst.path}/infoglue-root/infoglue-cms-treeservice/src/main/java/org/infoglue/cms/treeservice">
-			<fileset dir="${infoglue.src.java.path}/org/infoglue/cms/treeservice">
+		<property name="subpath2" value="org/infoglue/cms/treeservice" />
+		<move todir="${dst.path}/infoglue-root/infoglue-cms-treeservice/src/main/java/${subpath2}">
+			<fileset dir="${infoglue.src.java.path}/${subpath2}">
 				<include name="**/*.java" />
 			</fileset>
 		</move>
 	</target>
 	<target name="install-infoglue-actions">
 		<echo message="Installing infoglue-actions" />
-		<move todir="${dst.path}/infoglue-root/infoglue-actions/src/main/java/org/infoglue/cms/applications/cmstool/actions">
-			<fileset dir="${infoglue.src.java.path}/org/infoglue/cms/applications/cmstool/actions">
-				<include name="**/*.java" />
-			</fileset>
-		</move>
-		<move todir="${dst.path}/infoglue-root/infoglue-actions/src/main/java/org/infoglue/cms/applications/contenttool/wizards/actions">
-			<fileset dir="${infoglue.src.java.path}/org/infoglue/cms/applications/contenttool/wizards/actions">
-				<include name="**/*.java" />
-				<exclude name="**/CreateContentWizardInfoBean.java" />
-			</fileset>
-		</move>
-		<move todir="${dst.path}/infoglue-root/infoglue-actions/src/main/java/org/infoglue/cms/applications/contenttool/actions">
-			<fileset dir="${infoglue.src.java.path}/org/infoglue/cms/applications/contenttool/actions">
-				<include name="**/*Action.java" />
-			</fileset>
-		</move>
-		<move todir="${dst.path}/infoglue-root/infoglue-actions/src/main/java/org/infoglue/cms/applications/managementtool/actions">
-			<fileset dir="${infoglue.src.java.path}/org/infoglue/cms/applications/managementtool/actions">
-				<include name="**/*Action.java" />
-			</fileset>
-		</move>
-		<move todir="${dst.path}/infoglue-root/infoglue-actions/src/main/java/org/infoglue/cms/applications/mydesktoptool/actions">
-			<fileset dir="${infoglue.src.java.path}/org/infoglue/cms/applications/mydesktoptool/actions">
-				<include name="**/*Action.java" />
-			</fileset>
-		</move>
-		<move todir="${dst.path}/infoglue-root/infoglue-actions/src/main/java/org/infoglue/cms/applications/publishingtool/actions">
-			<fileset dir="${infoglue.src.java.path}/org/infoglue/cms/applications/publishingtool/actions">
-				<include name="**/*Action.java" />
-			</fileset>
-		</move>
-		<move todir="${dst.path}/infoglue-root/infoglue-actions/src/main/java/org/infoglue/cms/applications/structuretool/actions">
-			<fileset dir="${infoglue.src.java.path}/org/infoglue/cms/applications/structuretool/actions">
-				<include name="**/*Action.java" />
-			</fileset>
-		</move>
-		<move todir="${dst.path}/infoglue-root/infoglue-actions/src/main/java/org/infoglue/cms/applications/structuretool/wizards/actions">
-			<fileset dir="${infoglue.src.java.path}/org/infoglue/cms/applications/structuretool/wizards/actions">
-				<include name="**/*Action.java" />
-			</fileset>
-		</move>
-		<move todir="${dst.path}/infoglue-root/infoglue-actions/src/main/java/org/infoglue/cms/applications/tasktool/actions">
-			<fileset dir="${infoglue.src.java.path}/org/infoglue/cms/applications/tasktool/actions">
-				<include name="**/*Action.java" />
-			</fileset>
-		</move>
-		<move todir="${dst.path}/infoglue-root/infoglue-actions/src/main/java/org/infoglue/cms/applications/workflowtool/actions">
-			<fileset dir="${infoglue.src.java.path}/org/infoglue/cms/applications/workflowtool/actions">
-				<include name="**/*Action.java" />
-			</fileset>
-		</move>
-		<move todir="${dst.path}/infoglue-root/infoglue-actions/src/main/java/org/infoglue/cms/applications/common/actions">
-			<fileset dir="${infoglue.src.java.path}/org/infoglue/cms/applications/common/actions">
+		<property name="subpath" value="org/infoglue/cms/applications" />
+		<move todir="${dst.path}/infoglue-root/infoglue-actions/src/main/java/${subpath}">
+			<fileset dir="${infoglue.src.java.path}/${subpath}">
 				<include name="**/*Action.java" />
 				<exclude name="**/InfoGlueAbstractAction.java" />
 				<exclude name="**/WebworkAbstractAction.java" />
 			</fileset>
 		</move>
-		<move todir="${dst.path}/infoglue-root/infoglue-actions/src/main/java/org/infoglue/deliver/applications/actions">
-			<fileset dir="${infoglue.src.java.path}/org/infoglue/deliver/applications/actions">
-				<include name="**/*.java" />
-				<exclude name="**/InfoGlueComponent.java" />
-			</fileset>
-		</move>
-	</target>
-	<target name="install-infoglue-codeeditor">
-		<echo message="Installing infoglue-codeeditor" />
-		<move todir="${dst.path}/infoglue-root/infoglue-codeeditor/src/main/java/org/infoglue/cms/plugins/codeeditor">
-			<fileset dir="${infoglue.src.java.path}/org/infoglue/cms/plugins/codeeditor">
-				<include name="**/*.java" />
+		<property name="subpath2" value="org/infoglue/deliver/applications/actions" />
+		<move todir="${dst.path}/infoglue-root/infoglue-actions/src/main/java/${subpath2}">
+			<fileset dir="${infoglue.src.java.path}/${subpath2}">
+				<include name="**/*Action.java" />
 			</fileset>
 		</move>
 	</target>
 	<target name="install-infoglue-inputhandlers">
 		<echo message="Installing infoglue-inputhandlers" />
-		<move todir="${dst.path}/infoglue-root/infoglue-inputhandlers/src/main/java/org/infoglue/deliver/applications/inputhandlers">
-			<fileset dir="${infoglue.src.java.path}/org/infoglue/deliver/applications/inputhandlers">
+		<property name="subpath" value="org/infoglue/deliver/applications/inputhandlers" />
+		<move todir="${dst.path}/infoglue-root/infoglue-inputhandlers/src/main/java/${subpath}">
+			<fileset dir="${infoglue.src.java.path}/${subpath}">
 				<include name="**/*.java" />
 			</fileset>
 		</move>
 	</target>
 	<target name="install-infoglue-cms-jobs">
 		<echo message="Installing infoglue-cms-jobs" />
-		<move todir="${dst.path}/infoglue-root/infoglue-cms-jobs/src/main/java/org/infoglue/cms/jobs">
-			<fileset dir="${infoglue.src.java.path}/org/infoglue/cms/jobs">
+		<property name="subpath" value="org/infoglue/cms/jobs" />
+		<move todir="${dst.path}/infoglue-root/infoglue-cms-jobs/src/main/java/${subpath}">
+			<fileset dir="${infoglue.src.java.path}/${subpath}">
 				<include name="**/*.java" />
 			</fileset>
 		</move>
 	</target>
 	<target name="install-infoglue-common">
 		<echo message="Installing infoglue-common" />
-		<move todir="${dst.path}/infoglue-root/infoglue-common/src/main/java/org/infoglue/common/security">
-			<fileset dir="${infoglue.src.java.path}/org/infoglue/common/security">
+		<property name="subpath" value="org/infoglue/common/security" />
+		<move todir="${dst.path}/infoglue-root/infoglue-common/src/main/java/${subpath}">
+			<fileset dir="${infoglue.src.java.path}/${subpath}">
 				<include name="**/*.java" />
+			</fileset>
+		</move>
+	</target>
+	<target name="install-infoglue-cms-util-graphics">
+		<echo message="Installing infoglue-cms-util-graphics" />
+		<property name="subpath" value="org/infoglue/cms/util/graphics" />
+		<move todir="${dst.path}/infoglue-root/infoglue-cms-util-graphics/src/main/java/${subpath}">
+			<fileset dir="${infoglue.src.java.path}/${subpath}">
+				<include name="Imaging.java" />
 			</fileset>
 		</move>
 	</target>
 	<target name="install-infoglue-cms-workflow">
 		<echo message="Installing infoglue-cms-workflow" />
-		<move todir="${dst.path}/infoglue-root/infoglue-cms-workflow/src/main/java/org/infoglue/cms/webservices">
-			<fileset dir="${infoglue.src.java.path}/org/infoglue/cms/webservices">
+		<property name="subpath1" value="org/infoglue/cms/webservices" />
+		<move todir="${dst.path}/infoglue-root/infoglue-cms-workflow/src/main/java/${subpath1}">
+			<fileset dir="${infoglue.src.java.path}/${subpath1}">
 				<include name="**/RemoteWorkflowServiceImpl.java" />
 			</fileset>
 		</move>
-		<move todir="${dst.path}/infoglue-root/infoglue-cms-workflow/src/main/java/org/infoglue/cms/security">
-			<fileset dir="${infoglue.src.java.path}/org/infoglue/cms/security">
+		<property name="subpath2" value="org/infoglue/cms/security" />
+		<move todir="${dst.path}/infoglue-root/infoglue-cms-workflow/src/main/java/${subpath2}">
+			<fileset dir="${infoglue.src.java.path}/${subpath2}">
 				<include name="**/InfoGlueOSWorkflowInterceptor.java" />
 			</fileset>
 		</move>
-		<move todir="${dst.path}/infoglue-root/infoglue-cms-workflow/src/main/java/org/infoglue/cms/util/workflow">
-			<fileset dir="${infoglue.src.java.path}/org/infoglue/cms/util/workflow">
+		<property name="subpath3" value="org/infoglue/cms/util/workflow" />
+		<move todir="${dst.path}/infoglue-root/infoglue-cms-workflow/src/main/java/${subpath3}">
+			<fileset dir="${infoglue.src.java.path}/${subpath3}">
 				<include name="**/*.java" />
 				<exclude name="**/DatabaseSession.java" />
 				<exclude name="**/InfoGlueBasicWorkflow.java" />
@@ -237,100 +201,93 @@
 				<exclude name="**/WorkflowFacade.java" />
 			</fileset>
 		</move>
-		<move todir="${dst.path}/infoglue-root/infoglue-cms-workflow/src/main/resources/org/infoglue/cms/util/workflow">
-			<fileset dir="${infoglue.src.java.path}/org/infoglue/cms/util/workflow">
-				<include name="**/*.xml" />
+		<property name="subpath4" value="org/infoglue/cms/applications/workflowtool" />
+		<move todir="${dst.path}/infoglue-root/infoglue-cms-workflow/src/main/java/${subpath4}">
+			<fileset dir="${infoglue.src.java.path}/${subpath4}">
+				<include name="**/*.java" />
 			</fileset>
 		</move>
-		<move todir="${dst.path}/infoglue-root/infoglue-cms-workflow/src/main/java/org/infoglue/cms/applications/workflowtool">
-			<fileset dir="${infoglue.src.java.path}/org/infoglue/cms/applications/workflowtool">
+		<property name="subpath5" value="org/infoglue/cms/workflow/taglib" />
+		<move todir="${dst.path}/infoglue-root/infoglue-cms-workflow/src/main/java/${subpath5}">
+			<fileset dir="${infoglue.src.java.path}/${subpath5}">
 				<include name="**/*.java" />
 			</fileset>
 		</move>
 	</target>
 	<target name="install-infoglue-cms-webservices">
 		<echo message="Installing infoglue-cms-webservices" />
-		<move todir="${dst.path}/infoglue-root/infoglue-cms-webservices/src/main/java/org/infoglue/cms/webservices">
-			<fileset dir="${infoglue.src.java.path}/org/infoglue/cms/webservices">
+		<property name="subpath" value="org/infoglue/cms/webservices" />
+		<move todir="${dst.path}/infoglue-root/infoglue-cms-webservices/src/main/java/${subpath}">
+			<fileset dir="${infoglue.src.java.path}/${subpath}">
 				<include name="**/*.java" />
 			</fileset>
 		</move>
 	</target>
 	<target name="install-infoglue-deliver-taglib">
 		<echo message="Installing infoglue-deliver-taglib" />
-		<move todir="${dst.path}/infoglue-root/infoglue-deliver-taglib/src/main/java/org/infoglue/deliver/taglib">
-			<fileset dir="${infoglue.src.java.path}/org/infoglue/deliver/taglib">
+		<property name="subpath" value="org/infoglue/deliver/taglib" />
+		<move todir="${dst.path}/infoglue-root/infoglue-deliver-taglib/src/main/java/${subpath}">
+			<fileset dir="${infoglue.src.java.path}/${subpath}">
 				<include name="**/*.java" />
 			</fileset>
 		</move>
 	</target>
 	<target name="install-infoglue-cms-taglib">
 		<echo message="Installing infoglue-cms-taglib" />
-		<move todir="${dst.path}/infoglue-root/infoglue-cms-taglib/src/main/java/org/infoglue/cms/taglib">
-			<fileset dir="${infoglue.src.java.path}/org/infoglue/cms/taglib">
-				<include name="**/*.java" />
-			</fileset>
-		</move>
-		<move todir="${dst.path}/infoglue-root/infoglue-cms-taglib/src/main/java/org/infoglue/cms/workflow/taglib">
-			<fileset dir="${infoglue.src.java.path}/org/infoglue/cms/workflow/taglib">
+		<property name="subpath" value="org/infoglue/cms/taglib" />
+		<move todir="${dst.path}/infoglue-root/infoglue-cms-taglib/src/main/java/${subpath}">
+			<fileset dir="${infoglue.src.java.path}/${subpath}">
 				<include name="**/*.java" />
 			</fileset>
 		</move>
 	</target>
 	<target name="install-infoglue-deliver-util-webloggers">
 		<echo message="Installing infoglue-deliver-util-webloggers" />
-		<move todir="${dst.path}/infoglue-root/infoglue-deliver-util-webloggers/src/main/java/org/infoglue/deliver/util/webloggers">
-			<fileset dir="${infoglue.src.java.path}/org/infoglue/deliver/util/webloggers">
+		<property name="subpath" value="org/infoglue/deliver/util/webloggers" />
+		<move todir="${dst.path}/infoglue-root/infoglue-deliver-util-webloggers/src/main/java/${subpath}">
+			<fileset dir="${infoglue.src.java.path}/${subpath}">
 				<include name="**/*.java" />
 			</fileset>
 		</move>
 	</target>
 	<target name="install-infoglue-deliver-services">
 		<echo message="Installing infoglue-deliver-services" />
-		<move todir="${dst.path}/infoglue-root/infoglue-deliver-services/src/main/java/org/infoglue/deliver/services">
-			<fileset dir="${infoglue.src.java.path}/org/infoglue/deliver/services">
+		<property name="subpath" value="org/infoglue/deliver/services" />
+		<move todir="${dst.path}/infoglue-root/infoglue-deliver-services/src/main/java/${subpath}">
+			<fileset dir="${infoglue.src.java.path}/${subpath}">
 				<include name="**/*.java" />
 			</fileset>
 		</move>
 	</target>
 	<target name="install-infoglue-cms-security">
 		<echo message="Installing infoglue-cms-security" />
-		<move todir="${dst.path}/infoglue-root/infoglue-cms-security/src/main/java/org/infoglue/cms/security">
-			<fileset dir="${infoglue.src.java.path}/org/infoglue/cms/security">
-				<include name="**/BasicMethodAccessManager.java" />
-				<include name="**/WebServiceAuthorizationModule.java" />
-				<include name="**/CASBasicAuthenticationModule.java" />
-				<include name="**/CombinedJDBCBasicAuthorizationModule.java" />
-				<include name="**/CombinedJNDIBasicAuthenticationModule.java" />
-				<include name="**/CombinedJNDIBasicAuthorizationModule.java" />
-				<include name="**/DummySSLSocketFactory.java" />
-				<include name="**/DummyTrustManager.java" />
-				<include name="**/GenericCombinedAuthorizationModule.java" />
-				<include name="**/InfoGlueBasicAuthenticationModule.java" />
-				<include name="**/InfoGlueExtranetAuthenticationModule.java" />
-				<include name="**/InfoGlueJ2EEAuthenticationModule.java" />
-				<include name="**/InfoGlueJDBCAuthorizationModule.java" />
-				<include name="**/JNDIBasicAuthenticationModule.java" />
-				<include name="**/JNDIBasicAuthorizationModule.java" />
-				<include name="**/LenientFallbackJNDIBasicAuthorizationModule.java" />
-				<include name="**/SimplifiedFallbackJNDIBasicAuthorizationModule.java" />
-				<include name="**/SimplifiedJNDIBasicAuthorizationModule.java" />
+		<property name="subpath" value="org/infoglue/cms/security" />
+		<move todir="${dst.path}/infoglue-root/infoglue-cms-security/src/main/java/${subpath}">
+			<fileset dir="${infoglue.src.java.path}/${subpath}">
+				<include name="*Manager.java" />
+				<include name="*Factory.java" />
+				<include name="*Module.java" />
+				<exclude name="AuthenticationModule.java" />
+				<exclude name="AuthorizationModule.java" />
+				<exclude name="InfoGlueBasicAuthorizationModule.java" />
 			</fileset>
 		</move>
 	</target>
 	<target name="install-infoglue-cms-controllers-usecases">
 		<echo message="Installing install-infoglue-cms-controllers-usecases" />
-		<move todir="${dst.path}/infoglue-root/infoglue-cms-controllers-usecases/src/main/java/org/infoglue/cms/controllers/usecases">
-			<fileset dir="${infoglue.src.java.path}/org/infoglue/cms/controllers/usecases">
+		<property name="subpath" value="org/infoglue/cms/controllers/usecases" />
+		<move todir="${dst.path}/infoglue-root/infoglue-cms-controllers-usecases/src/main/java/${subpath}">
+			<fileset dir="${infoglue.src.java.path}/${subpath}">
 				<include name="**/*.java" />
 			</fileset>
 		</move>
 	</target>
 	<target name="install-infoglue-deliver-portal">
 		<echo message="Installing install-infoglue-deliver-portal" />
-		<move todir="${dst.path}/infoglue-root/infoglue-deliver-portal/src/main/java/org/infoglue/deliver/portal">
-			<fileset dir="${infoglue.src.java.path}/org/infoglue/deliver/portal">
-				<include name="**/deploy/Deploy.java" />
+		<property name="subpath" value="org/infoglue/deliver/portal" />
+		<move todir="${dst.path}/infoglue-root/infoglue-deliver-portal/src/main/java/${subpath}">
+			<fileset dir="${infoglue.src.java.path}/${subpath}">
+				<include name="**/deploy/*.java" />
 				<include name="**/dispatcher/*.java" />
 				<include name="**/information/*.java" />
 				<include name="**/PortalService.java" />
@@ -360,9 +317,17 @@
 	</target>
 	<target name="install-infoglue-cms-interceptors">
 		<echo message="Installing install-infoglue-cms-interceptors" />
-		<move todir="${dst.path}/infoglue-root/infoglue-cms-interceptors/src/main/java/org/infoglue/cms/interceptors">
-			<fileset dir="${infoglue.src.java.path}/org/infoglue/cms/interceptors">
+		<property name="subpath" value="org/infoglue/cms/interceptors" />
+		<move todir="${dst.path}/infoglue-root/infoglue-cms-interceptors/src/main/java/${subpath}">
+			<fileset dir="${infoglue.src.java.path}/${subpath}">
 				<include name="**/*.java" />
+			</fileset>
+		</move>
+		<property name="subpath2" value="org/infoglue/cms/security/interceptors" />
+		<move todir="${dst.path}/infoglue-root/infoglue-cms-interceptors/src/main/java/${subpath2}">
+			<fileset dir="${infoglue.src.java.path}/${subpath2}">
+				<include name="InfoGlueCommonAccessRightsInterceptor.java" />
+				<include name="InfoGlueOSWorkflowInterceptor.java" />
 			</fileset>
 		</move>
 	</target>
@@ -379,8 +344,9 @@
 				<include name="**/*.xml" />
 			</fileset>
 		</move>
-		<move todir="${dst.path}/infoglue-root/infoglue-cms/src/main/java/org/infoglue/cms/util">
-			<fileset dir="${infoglue.test.java.path}/org/infoglue/cms/util">
+		<property name="subpath" value="org/infoglue/cms/util" />
+		<move todir="${dst.path}/infoglue-root/infoglue-cms/src/main/java/${subpath}">
+			<fileset dir="${infoglue.test.java.path}/${subpath}">
 				<include name="**/FakeHttpServletRequest.java" />
 				<include name="**/FakeHttpServletResponse.java" />
 				<include name="**/FakeHttpSession.java" />
@@ -425,13 +391,13 @@
 				<include name="**/*" />
 			</fileset>
 		</copy>
+		<move tofile="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/webapp/index.html" file="${infoglue.src.webapp.path}/index-cms.html" failonerror="false" />
 		<move todir="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/webapp/">
 			<fileset dir="${infoglue.src.webapp.path}">
 				<include name="**/*" />
 			</fileset>
 		</move>
 		<move tofile="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/webappResources/WEB-INF/web.xml" file="${infoglue.conf.path}/cms-web.xml" failonerror="false" />
-		<move tofile="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/webapp/index.html" file="${infoglue.src.webapp.path}/index-cms.html" failonerror="false" />
 		<move todir="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/resources/" file="${infoglue.conf.path}/cms/jobs.xml" failonerror="false" />
 		<move todir="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/resources/" file="${infoglue.conf.path}/cms/webwork.properties" failonerror="false" />
 		<move todir="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/resources/" file="${infoglue.conf.path}/cms/actions.xml" failonerror="false" />
