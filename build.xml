@@ -29,6 +29,7 @@
 		<antcall target="install-infoglue-cms-interceptors" />
 		<antcall target="install-infoglue-cms-security" />
 		<antcall target="install-infoglue-deliver-util-webloggers" />
+		<antcall target="install-infoglue-deliver-util-rss" />
 		<antcall target="install-infoglue-inputhandlers" />
 		<antcall target="install-infoglue-deliver-portal" />
 		<antcall target="install-infoglue-cms-jobs" />
@@ -308,6 +309,15 @@
 		<echo message="Installing infoglue-deliver-util-webloggers" />
 		<property name="subpath" value="org/infoglue/deliver/util/webloggers" />
 		<move todir="${dst.path}/infoglue-root/infoglue-deliver-util-webloggers/src/main/java/${subpath}">
+			<fileset dir="${infoglue.src.java.path}/${subpath}">
+				<include name="**/*.java" />
+			</fileset>
+		</move>
+	</target>
+	<target name="install-infoglue-deliver-util-rss">
+		<echo message="Installing infoglue-deliver-util-rss" />
+		<property name="subpath" value="org/infoglue/deliver/util/rss" />
+		<move todir="${dst.path}/infoglue-root/infoglue-deliver-util-rss/src/main/java/${subpath}">
 			<fileset dir="${infoglue.src.java.path}/${subpath}">
 				<include name="**/*.java" />
 			</fileset>

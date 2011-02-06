@@ -116,10 +116,6 @@
 			<artifactId>freemarker</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>rome</groupId>
-			<artifactId>rome</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>javax.xml</groupId>
 			<artifactId>jaxrpc-api</artifactId>
 		</dependency>
@@ -190,6 +186,10 @@
 		<dependency>
 			<groupId>org.infoglue</groupId>
 			<artifactId>infoglue-common-webappintegrator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.infoglue</groupId>
+			<artifactId>infoglue-deliver-util-rss</artifactId>
 		</dependency>
 	</dependencies>
 </project>

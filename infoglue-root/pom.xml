@@ -39,6 +39,7 @@
 		<module>infoglue-cms-util-dom</module>
 		<module>infoglue-cms-util-webdav</module>
 		<module>infoglue-common-webappintegrator</module>
+		<module>infoglue-deliver-util-rss</module>
 	</modules>
 	<properties>
 		<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
@@ -583,6 +584,11 @@
 			</dependency>
 			<!-- infoglue-deliver-services -->
 			<!-- infoglue-deliver-taglib -->
+			<dependency>
+				<groupId>org.infoglue</groupId>
+				<artifactId>infoglue-deliver-util-rss</artifactId>
+				<version>${infoglue.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>org.infoglue</groupId>
 				<artifactId>infoglue-deliver-util-webloggers</artifactId>
