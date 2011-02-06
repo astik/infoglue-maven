@@ -128,9 +128,9 @@
 	</target>
 	<target name="install-infoglue-actions">
 		<echo message="Installing infoglue-actions" />
-		<property name="subpath" value="org/infoglue/cms/applications" />
-		<move todir="${dst.path}/infoglue-root/infoglue-actions/src/main/java/${subpath}">
-			<fileset dir="${infoglue.src.java.path}/${subpath}">
+		<property name="subpath1" value="org/infoglue/cms/applications" />
+		<move todir="${dst.path}/infoglue-root/infoglue-actions/src/main/java/${subpath1}">
+			<fileset dir="${infoglue.src.java.path}/${subpath1}">
 				<include name="**/*Action.java" />
 				<exclude name="**/InfoGlueAbstractAction.java" />
 				<exclude name="**/WebworkAbstractAction.java" />
@@ -140,6 +140,12 @@
 		<move todir="${dst.path}/infoglue-root/infoglue-actions/src/main/java/${subpath2}">
 			<fileset dir="${infoglue.src.java.path}/${subpath2}">
 				<include name="**/*Action.java" />
+			</fileset>
+		</move>
+		<property name="subpath3" value="org/infoglue/cms/applications" />
+		<move todir="${dst.path}/infoglue-root/infoglue-actions/src/main/resources/${subpath3}">
+			<fileset dir="${infoglue.src.java.path}/${subpath3}">
+				<include name="defaultContentTypeDefinition.xml" />
 			</fileset>
 		</move>
 	</target>
