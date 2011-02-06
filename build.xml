@@ -12,7 +12,7 @@
 		<delete dir="${dst.path}/infoglue-root" />
 	</target>
 	<target name="install">
-<!--
+		<!--
 		<antcall target="reset-install-infoglue-cms" />
 -->
 		<antcall target="install-base-project-from-plain-folder" />
@@ -42,6 +42,7 @@
 		<antcall target="install-infoglue-cms-applications-databeans" />
 		<antcall target="install-infoglue-cms-exception" />
 		<antcall target="install-infoglue-common-util-cvsclient" />
+		<antcall target="install-infoglue-common-webappintegrator" />
 		<antcall target="install-infoglue-cms" />
 		<antcall target="install-infoglue-test" />
 		<antcall target="install-infoglue-webapp-deliver" />
@@ -82,6 +83,29 @@
 		<move todir="${dst.path}/infoglue-root/infoglue-cms-net/src/main/java/${subpath}">
 			<fileset dir="${infoglue.src.java.path}/${subpath}">
 				<include name="**/*.java" />
+			</fileset>
+		</move>
+	</target>
+	<target name="install-infoglue-common-webappintegrator">
+		<echo message="Installing infoglue-common-webintegrator" />
+		<property name="subpath1" value="org/infoglue/common/webappintegrator" />
+		<move todir="${dst.path}/infoglue-root/infoglue-common-webappintegrator/src/main/java/${subpath1}">
+			<fileset dir="${infoglue.src.java.path}/${subpath1}">
+				<include name="**/*.java" />
+			</fileset>
+		</move>
+		<property name="subpath2" value="org/infoglue/deliver/util/ioqueue" />
+		<move todir="${dst.path}/infoglue-root/infoglue-common-webappintegrator/src/main/java/${subpath2}">
+			<fileset dir="${infoglue.src.java.path}/${subpath2}">
+				<include name="**/*.java" />
+				<exclude name="**/CachingIOResultHandler.java" />
+			</fileset>
+		</move>
+		<property name="subpath3" value="org/infoglue/deliver/util" />
+		<move todir="${dst.path}/infoglue-root/infoglue-common-webappintegrator/src/main/java/${subpath3}">
+			<fileset dir="${infoglue.src.java.path}/${subpath3}">
+				<include name="HttpHelper.java" />
+				<include name="HTUU.java" />
 			</fileset>
 		</move>
 	</target>

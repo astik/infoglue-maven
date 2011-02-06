@@ -16,10 +16,6 @@
 			<artifactId>jsp-api</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>commons-httpclient</groupId>
-			<artifactId>commons-httpclient</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>org.codehaus.castor</groupId>
 			<artifactId>castor-core</artifactId>
 		</dependency>
@@ -160,10 +156,6 @@
 			<artifactId>xercesImpl</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.jsoup</groupId>
-			<artifactId>jsoup</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>com.caucho</groupId>
 			<artifactId>resin-quercus</artifactId>
 		</dependency>
@@ -194,6 +186,10 @@
 		<dependency>
 			<groupId>org.infoglue</groupId>
 			<artifactId>infoglue-common-util-cvsclient</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.infoglue</groupId>
+			<artifactId>infoglue-common-webappintegrator</artifactId>
 		</dependency>
 	</dependencies>
 </project>
