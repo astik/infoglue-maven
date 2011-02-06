@@ -362,6 +362,11 @@
 				<include name="**/*.java" />
 			</fileset>
 		</move>
+		<move todir="${dst.path}/infoglue-root/infoglue-test/src/test/resources">
+			<fileset dir="${infoglue.test.java.path}">
+				<include name="**/*.xml" />
+			</fileset>
+		</move>
 	</target>
 	<target name="install-infoglue-webapp-deliver">
 		<echo message="Installing infoglue-webapp-deliver" />
