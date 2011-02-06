@@ -164,10 +164,6 @@
 			<artifactId>jsoup</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.ettrema</groupId>
-			<artifactId>milton-api</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>com.caucho</groupId>
 			<artifactId>resin-quercus</artifactId>
 		</dependency>

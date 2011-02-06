@@ -37,6 +37,7 @@
 		<module>infoglue-common-util-cvsclient</module>
 		<module>infoglue-cms-util-css</module>
 		<module>infoglue-cms-util-dom</module>
+		<module>infoglue-cms-util-webdav</module>
 	</modules>
 	<properties>
 		<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
@@ -537,6 +538,11 @@
 			<dependency>
 				<groupId>org.infoglue</groupId>
 				<artifactId>infoglue-cms-util-graphics</artifactId>
+				<version>${infoglue.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.infoglue</groupId>
+				<artifactId>infoglue-cms-util-webdav</artifactId>
 				<version>${infoglue.version}</version>
 			</dependency>
 			<dependency>

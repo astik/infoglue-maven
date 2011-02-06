@@ -22,6 +22,7 @@
 		<antcall target="install-infoglue-cms-util-graphics" />
 		<antcall target="install-infoglue-cms-util-css" />
 		<antcall target="install-infoglue-cms-util-dom" />
+		<antcall target="install-infoglue-cms-util-webdav" />
 		<antcall target="install-infoglue-taglib" />
 		<antcall target="install-infoglue-cms-controllers-usecases" />
 		<antcall target="install-infoglue-cms-workflow" />
@@ -188,18 +189,27 @@
 	<target name="install-infoglue-cms-util-css">
 		<echo message="Installing infoglue-cms-util-css" />
 		<property name="subpath" value="org/infoglue/cms/util/css" />
-		<move todir="${dst.path}/infoglue-root/infoglue-cms-util-graphics/src/main/java/${subpath}">
+		<move todir="${dst.path}/infoglue-root/infoglue-cms-util-css/src/main/java/${subpath}">
 			<fileset dir="${infoglue.src.java.path}/${subpath}">
-				<include name="Imaging.java" />
+				<include name="**/*.java" />
 			</fileset>
 		</move>
 	</target>
 	<target name="install-infoglue-cms-util-dom">
 		<echo message="Installing infoglue-cms-util-dom" />
 		<property name="subpath" value="org/infoglue/cms/util/dom" />
-		<move todir="${dst.path}/infoglue-root/infoglue-cms-util-graphics/src/main/java/${subpath}">
+		<move todir="${dst.path}/infoglue-root/infoglue-cms-util-dom/src/main/java/${subpath}">
 			<fileset dir="${infoglue.src.java.path}/${subpath}">
-				<include name="Imaging.java" />
+				<include name="**/*.java" />
+			</fileset>
+		</move>
+	</target>
+	<target name="install-infoglue-cms-util-webdav">
+		<echo message="Installing infoglue-cms-util-webdav" />
+		<property name="subpath" value="org/infoglue/cms/util/webdav" />
+		<move todir="${dst.path}/infoglue-root/infoglue-cms-util-webdav/src/main/java/${subpath}">
+			<fileset dir="${infoglue.src.java.path}/${subpath}">
+				<include name="**/*.java" />
 			</fileset>
 		</move>
 	</target>
