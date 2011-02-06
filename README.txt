@@ -43,14 +43,11 @@ A maven project has been created for this : propertyset
 
 All the others are maven dependencies fetch from central or atlasian repos.
 
-Velocity is bundle into Infoglue as velocity-1.6.3IGPatched ; in the maven version its the regular 1.6.3 as I don't have the source
-Milton is bundle into Infoglue as milton-api-1.5.4IGPatched ; in the maven version its the regular 1.5.4 as I don't have the source
+Velocity is bundle into Infoglue as velocity-1.7IGPatched ; in the maven version its the regular 1.7 as I don't have the source for now
+Milton is bundle into Infoglue as milton-api-1.5.4IGPatched ; in the maven version its the regular 1.5.4 as I don't have the source for now
 
 ------------------------------------------------
 Details on the eclipse part of this install :
-
-Many error are, in fact, dependencies which consist of unused import, do an "organise import" in eclipse, it should work
-Other kind of error on dependencies are logger which are declared with a wrong class.
 
 You can find more info about the DateTickUnit note :
 http://sourceforge.net/tracker/index.php?func=detail&aid=1062698&group_id=15494&atid=365494
