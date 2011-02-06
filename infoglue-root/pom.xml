@@ -34,6 +34,9 @@
 		<!-- <module>infoglue-test</module> -->
 		<module>infoglue-cms-applications-databeans</module>
 		<module>infoglue-cms-exception</module>
+		<module>infoglue-common-util-cvsclient</module>
+		<module>infoglue-cms-util-css</module>
+		<module>infoglue-cms-util-dom</module>
 	</modules>
 	<properties>
 		<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
@@ -150,7 +153,7 @@
 				<plugin>
 					<groupId>net.sourceforge.maven-taglib</groupId>
 					<artifactId>maven-taglib-plugin</artifactId>
-					 <version>2.4</version> 
+					<version>2.4</version>
 					<configuration>
 						<taglib.src.dir>src/main/webapp/WEB-INF/tld</taglib.src.dir>
 					</configuration>
@@ -523,6 +526,16 @@
 			</dependency>
 			<dependency>
 				<groupId>org.infoglue</groupId>
+				<artifactId>infoglue-cms-util-css</artifactId>
+				<version>${infoglue.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.infoglue</groupId>
+				<artifactId>infoglue-cms-util-dom</artifactId>
+				<version>${infoglue.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.infoglue</groupId>
 				<artifactId>infoglue-cms-util-graphics</artifactId>
 				<version>${infoglue.version}</version>
 			</dependency>
@@ -539,6 +552,11 @@
 			<dependency>
 				<groupId>org.infoglue</groupId>
 				<artifactId>infoglue-common</artifactId>
+				<version>${infoglue.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.infoglue</groupId>
+				<artifactId>infoglue-common-util-cvsclient</artifactId>
 				<version>${infoglue.version}</version>
 			</dependency>
 			<dependency>

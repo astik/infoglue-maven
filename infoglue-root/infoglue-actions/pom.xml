@@ -59,5 +59,9 @@
 			<groupId>org.infoglue</groupId>
 			<artifactId>infoglue-cms-util-graphics</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.infoglue</groupId>
+			<artifactId>infoglue-cms-util-css</artifactId>
+		</dependency>
 	</dependencies>
 </project>

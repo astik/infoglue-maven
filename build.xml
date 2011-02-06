@@ -20,6 +20,8 @@
 		<antcall target="install-infoglue-cms-net" />
 		<antcall target="install-infoglue-common" />
 		<antcall target="install-infoglue-cms-util-graphics" />
+		<antcall target="install-infoglue-cms-util-css" />
+		<antcall target="install-infoglue-cms-util-dom" />
 		<antcall target="install-infoglue-taglib" />
 		<antcall target="install-infoglue-cms-controllers-usecases" />
 		<antcall target="install-infoglue-cms-workflow" />
@@ -38,6 +40,7 @@
 		<antcall target="install-infoglue-deliver-taglib" />
 		<antcall target="install-infoglue-cms-applications-databeans" />
 		<antcall target="install-infoglue-cms-exception" />
+		<antcall target="install-infoglue-common-util-cvsclient" />
 		<antcall target="install-infoglue-cms" />
 		<antcall target="install-infoglue-test" />
 		<antcall target="install-infoglue-webapp-deliver" />
@@ -170,6 +173,24 @@
 	<target name="install-infoglue-cms-util-graphics">
 		<echo message="Installing infoglue-cms-util-graphics" />
 		<property name="subpath" value="org/infoglue/cms/util/graphics" />
+		<move todir="${dst.path}/infoglue-root/infoglue-cms-util-graphics/src/main/java/${subpath}">
+			<fileset dir="${infoglue.src.java.path}/${subpath}">
+				<include name="Imaging.java" />
+			</fileset>
+		</move>
+	</target>
+	<target name="install-infoglue-cms-util-css">
+		<echo message="Installing infoglue-cms-util-css" />
+		<property name="subpath" value="org/infoglue/cms/util/css" />
+		<move todir="${dst.path}/infoglue-root/infoglue-cms-util-graphics/src/main/java/${subpath}">
+			<fileset dir="${infoglue.src.java.path}/${subpath}">
+				<include name="Imaging.java" />
+			</fileset>
+		</move>
+	</target>
+	<target name="install-infoglue-cms-util-dom">
+		<echo message="Installing infoglue-cms-util-dom" />
+		<property name="subpath" value="org/infoglue/cms/util/dom" />
 		<move todir="${dst.path}/infoglue-root/infoglue-cms-util-graphics/src/main/java/${subpath}">
 			<fileset dir="${infoglue.src.java.path}/${subpath}">
 				<include name="Imaging.java" />
@@ -362,6 +383,21 @@
 		<property name="subpath" value="org/infoglue/cms/exception" />
 		<move todir="${dst.path}/infoglue-root/infoglue-cms-exception/src/main/java/${subpath}">
 			<fileset dir="${infoglue.src.java.path}/${subpath}">
+				<include name="**/*.java" />
+			</fileset>
+		</move>
+	</target>
+	<target name="install-infoglue-common-util-cvsclient">
+		<echo message="Installing infoglue-common-util-cvsclient" />
+		<property name="subpath1" value="org/infoglue/common/util/cvsclient" />
+		<move todir="${dst.path}/infoglue-root/infoglue-cms-exception/src/main/java/${subpath1}">
+			<fileset dir="${infoglue.src.java.path}/${subpath1}">
+				<include name="**/*.java" />
+			</fileset>
+		</move>
+		<property name="subpath2" value="org/infoglue/common/util/vc/connectors" />
+		<move todir="${dst.path}/infoglue-root/infoglue-cms-exception/src/main/java/${subpath2}">
+			<fileset dir="${infoglue.src.java.path}/${subpath2}">
 				<include name="**/*.java" />
 			</fileset>
 		</move>
