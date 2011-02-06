@@ -36,6 +36,8 @@
 		<antcall target="install-infoglue-deliver-services" />
 		<antcall target="install-infoglue-actions" />
 		<antcall target="install-infoglue-deliver-taglib" />
+		<antcall target="install-infoglue-cms-applications-databeans" />
+		<antcall target="install-infoglue-cms-exception" />
 		<antcall target="install-infoglue-cms" />
 		<antcall target="install-infoglue-test" />
 		<antcall target="install-infoglue-webapp-deliver" />
@@ -352,6 +354,27 @@
 				<include name="**/FakeHttpSession.java" />
 				<include name="**/FakeServletContext.java" />
 				<include name="**/FakeFilterConfig.java" />
+			</fileset>
+		</move>
+	</target>
+	<target name="install-infoglue-cms-exception">
+		<echo message="Installing infoglue-cms-exception" />
+		<property name="subpath" value="org/infoglue/cms/exception" />
+		<move todir="${dst.path}/infoglue-root/infoglue-cms-exception/src/main/java/${subpath}">
+			<fileset dir="${infoglue.src.java.path}/${subpath}">
+				<include name="**/*.java" />
+			</fileset>
+		</move>
+	</target>
+	<target name="install-infoglue-cms-applications-databeans">
+		<echo message="Installing infoglue-cms-applications-databeans" />
+		<property name="subpath" value="org/infoglue/cms/applications/databeans" />
+		<move todir="${dst.path}/infoglue-root/infoglue-cms-exception/src/main/java/${subpath}">
+			<fileset dir="${infoglue.src.java.path}/${subpath}">
+				<include name="**/*.java" />
+				<exclude name="**/ComponentPropertyDefinition.java" />
+				<exclude name="**/OptimizationBeanList.java" />
+				<exclude name="**/SessionInfoBean.java" />
 			</fileset>
 		</move>
 	</target>

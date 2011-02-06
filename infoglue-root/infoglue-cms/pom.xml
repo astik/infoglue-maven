@@ -207,5 +207,9 @@
 			<groupId>org.infoglue</groupId>
 			<artifactId>infoglue-taglib</artifactId>
 		</dependency>
+			<dependency>
+			<groupId>org.infoglue</groupId>
+			<artifactId>infoglue-cms-exception</artifactId>
+		</dependency>
 	</dependencies>
 </project>

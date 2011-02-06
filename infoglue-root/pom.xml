@@ -32,6 +32,8 @@
 		<module>infoglue-webapp-deliver</module>
 		<module>infoglue-webapp-cms</module>
 		<!-- <module>infoglue-test</module> -->
+		<module>infoglue-cms-applications-databeans</module>
+		<module>infoglue-cms-exception</module>
 	</modules>
 	<properties>
 		<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
@@ -148,9 +150,25 @@
 				<plugin>
 					<groupId>net.sourceforge.maven-taglib</groupId>
 					<artifactId>maven-taglib-plugin</artifactId>
+					 <version>2.4</version> 
 					<configuration>
 						<taglib.src.dir>src/main/webapp/WEB-INF/tld</taglib.src.dir>
 					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>tomcat-maven-plugin</artifactId>
+					<version>1.1</version>
+					<configuration>
+						<warSourceDirectory>target/${project.artifactId}</warSourceDirectory>
+					</configuration>
+					<dependencies>
+						<dependency>
+							<groupId>mysql</groupId>
+							<artifactId>mysql-connector-java</artifactId>
+							<version>5.1.14</version>
+						</dependency>
+					</dependencies>
 				</plugin>
 			</plugins>
 		</pluginManagement>
@@ -455,7 +473,17 @@
 			</dependency>
 			<dependency>
 				<groupId>org.infoglue</groupId>
+				<artifactId>infoglue-cms-applications-databeans</artifactId>
+				<version>${infoglue.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.infoglue</groupId>
 				<artifactId>infoglue-cms-controllers-usecases</artifactId>
+				<version>${infoglue.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.infoglue</groupId>
+				<artifactId>infoglue-cms-exception</artifactId>
 				<version>${infoglue.version}</version>
 			</dependency>
 			<dependency>
