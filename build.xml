@@ -440,13 +440,13 @@
 	<target name="install-infoglue-common-util-cvsclient">
 		<echo message="Installing infoglue-common-util-cvsclient" />
 		<property name="subpath1" value="org/infoglue/common/util/cvsclient" />
-		<move todir="${dst.path}/infoglue-root/infoglue-cms-exception/src/main/java/${subpath1}">
+		<move todir="${dst.path}/infoglue-root/infoglue-common-util-cvsclient/src/main/java/${subpath1}">
 			<fileset dir="${infoglue.src.java.path}/${subpath1}">
 				<include name="**/*.java" />
 			</fileset>
 		</move>
 		<property name="subpath2" value="org/infoglue/common/util/vc/connectors" />
-		<move todir="${dst.path}/infoglue-root/infoglue-cms-exception/src/main/java/${subpath2}">
+		<move todir="${dst.path}/infoglue-root/infoglue-common-util-cvsclient/src/main/java/${subpath2}">
 			<fileset dir="${infoglue.src.java.path}/${subpath2}">
 				<include name="**/*.java" />
 			</fileset>
