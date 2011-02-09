@@ -64,7 +64,6 @@ public class PropFindHandler implements ExistingEntityHandler {
         return new String[]{Method.PROPFIND.code};
     }
 
-    @Override
     public boolean isCompatible( Resource handler ) {
         return ( handler instanceof PropFindableResource );
     }

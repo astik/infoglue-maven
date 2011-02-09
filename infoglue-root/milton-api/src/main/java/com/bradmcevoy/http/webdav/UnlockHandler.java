@@ -64,7 +64,6 @@ public class UnlockHandler implements ExistingEntityHandler {
         return new String[]{Method.UNLOCK.code};
     }
     
-    @Override
     public boolean isCompatible( Resource handler ) {
         return handler instanceof LockableResource;
     }

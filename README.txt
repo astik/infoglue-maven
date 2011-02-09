@@ -9,8 +9,14 @@
 		- Then it will copy the source from the infoglue project into the right folder of the maven2 architecture
 	=> You have now a working maven2 project : infoglue-root 	
 	2/ MAVEN (details below)
-		- go to infoglue-root folder with a command line
-		- compile Infoglue, it may takes some time, as it have to grab all the needed lib
+		If you just start with maven, it may takes some time at first as it have to grab all the needed lib
+		- go to infoglue-root/propertyset folder with a command line and install it
+			mvn install
+		- go to infoglue-root/milton-api folder with a command line and install it
+			mvn install
+		- go to infoglue-root/velocity folder with a command line and install it
+			mvn install
+		- go to infoglue-root folder with a command line and install it
 			mvn install
 	3/ ECLIPSE (details below)
 		- import into eclipse infoglue-root as a maven project
@@ -41,10 +47,11 @@ Details on the maven part of this install :
 One particular jar, propertyset-1.4 is not available as a build, it is only available as a tag in openymphony svn.
 A maven project has been created for this : propertyset
 
-All the others are maven dependencies fetch from central or atlasian repos.
+2 jars are patched for Infoglue, details of these patches are available in their respective README : 
+- velocity-1.7IGPatched
+- milton-api-1.5.4IGPatched
 
-Velocity is bundle into Infoglue as velocity-1.7IGPatched ; in the maven version its the regular 1.7 as I don't have the source for now
-Milton is bundle into Infoglue as milton-api-1.5.4IGPatched ; in the maven version its the regular 1.5.4 as I don't have the source for now
+All the others are maven dependencies fetch from central or atlasian repos.
 
 ------------------------------------------------
 Details on the eclipse part of this install :

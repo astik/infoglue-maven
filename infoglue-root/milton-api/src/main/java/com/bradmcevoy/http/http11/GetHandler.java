@@ -27,12 +27,10 @@ public class GetHandler implements ExistingEntityHandler {
         this.resourceHandlerHelper = new ResourceHandlerHelper( handlerHelper, responseHandler );
     }
 
-    @Override
     public void process( HttpManager manager, Request request, Response response ) throws NotAuthorizedException, ConflictException, BadRequestException {
         this.resourceHandlerHelper.process( manager, request, response, this );
     }
 
-    @Override
     public void processResource( HttpManager manager, Request request, Response response, Resource r ) throws NotAuthorizedException, ConflictException, BadRequestException {
         manager.onGet( request, response, r, request.getParams() );
         resourceHandlerHelper.processResource( manager, request, response, r, this, true, request.getParams(), null);
@@ -122,12 +120,10 @@ public class GetHandler implements ExistingEntityHandler {
         return false;   // TODO: not implemented
     }
 
-    @Override
     public String[] getMethods() {
         return new String[]{Request.Method.GET.code, Request.Method.HEAD.code};
     }
 
-    @Override
     public boolean isCompatible( Resource handler ) {
         return ( handler instanceof GetableResource );
     }

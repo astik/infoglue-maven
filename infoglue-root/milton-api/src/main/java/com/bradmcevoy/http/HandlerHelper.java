@@ -35,6 +35,9 @@ public class HandlerHelper {
      */
     public boolean checkExpects( Http11ResponseHandler responseHandler, Request request, Response response ) {
         String s = request.getExpectHeader();
+        if(true) //Patched for InfoGlue and Mac OS X
+        	return true;
+
         if( s != null && s.length() > 0 ) {
             response.setStatus( Response.Status.SC_CONTINUE);
             return false;

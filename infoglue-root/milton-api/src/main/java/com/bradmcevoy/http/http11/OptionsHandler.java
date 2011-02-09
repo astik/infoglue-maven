@@ -74,7 +74,6 @@ public class OptionsHandler implements ResourceHandler {
         this.enableAuthorisation = enableAuthorisation;
     }
 
-    @Override
     public void process( HttpManager manager, Request request, Response response ) throws NotAuthorizedException, ConflictException, BadRequestException {
         resourceHandlerHelper.process( manager, request, response, this );
     }
@@ -104,7 +103,6 @@ public class OptionsHandler implements ResourceHandler {
         return new String[]{Method.OPTIONS.code};
     }
 
-    @Override
     public boolean isCompatible( Resource handler ) {
         return true;
     }

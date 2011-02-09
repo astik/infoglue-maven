@@ -53,12 +53,10 @@ public class PutHandler implements Handler {
         return new String[]{Method.PUT.code};
     }
 
-    @Override
     public boolean isCompatible( Resource handler ) {
         return ( handler instanceof PutableResource );
     }
 
-    @Override
     public void process( HttpManager manager, Request request, Response response ) throws NotAuthorizedException, ConflictException, BadRequestException {
         if( !handlerHelper.checkExpects( responseHandler, request, response ) ) {
             return;

@@ -30,7 +30,6 @@ public class CopyHandler implements ExistingEntityHandler {
         return new String[]{Method.COPY.code};
     }
 
-    @Override
     public boolean isCompatible( Resource handler ) {
         return ( handler instanceof CopyableResource );
     }

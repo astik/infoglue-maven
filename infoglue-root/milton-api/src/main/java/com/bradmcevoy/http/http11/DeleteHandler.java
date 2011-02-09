@@ -30,12 +30,10 @@ public class DeleteHandler implements ExistingEntityHandler {
         return new String[]{Method.DELETE.code};
     }
 
-    @Override
     public boolean isCompatible(Resource handler) {
         return (handler instanceof DeletableResource);
     }
 
-    @Override
     public void process(HttpManager manager, Request request, Response response) throws NotAuthorizedException, ConflictException, BadRequestException {
         resourceHandlerHelper.process(manager, request, response, this);
     }

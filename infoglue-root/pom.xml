@@ -7,9 +7,6 @@
 	<name>Infoglue parent</name>
 	<version>0.0.1-SNAPSHOT</version>
 	<modules>
-		<module>propertyset</module>
-		<module>milton-api</module>
-		<module>velocity</module>
 		<module>infoglue-cms-io</module>
 		<module>infoglue-cms-net</module>
 		<module>infoglue-cms-util-graphics</module>

@@ -25,7 +25,6 @@ public class MkColHandler implements Handler {
         return new String[]{Method.MKCOL.code};
     }
 
-    @Override
     public boolean isCompatible( Resource handler ) {
         return ( handler instanceof MakeCollectionableResource );
     }
