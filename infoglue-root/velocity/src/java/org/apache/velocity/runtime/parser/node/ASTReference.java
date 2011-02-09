@@ -505,12 +505,35 @@ public class ASTReference extends SimpleNode
      * @param context
      * @return
      */
+    /*
     private String getNullString(InternalContextAdapter context)
     {
         Object callingArgument = context.get(".literal." + nullString);
 
         if (callingArgument != null)
             return ((Node) callingArgument).literal();
+        else
+            return nullString;
+    }
+    */
+
+    private String getNullString(InternalContextAdapter context)
+    {
+    	Object callingArgument = context.get(".literal." + nullString);
+
+        if (callingArgument != null)
+        {
+        	if(callingArgument instanceof Node)
+        	{
+        		return ((Node) callingArgument).literal();
+        	}
+        	else
+        	{
+        		System.out.println("callingArgument was not an instance of Node: [" + this.literal() + "] in "  + callingArgument.getClass().getName());
+        		log.error("callingArgument was not an instance of Node: [" + this.literal() + "] in "  + callingArgument.getClass().getName());
+        		return nullString;
+        	}
+        }
         else
             return nullString;
     }
