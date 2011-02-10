@@ -20,6 +20,10 @@
 			<artifactId>milton-api</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>com.ettrema</groupId>
+			<artifactId>milton-servlet</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.infoglue</groupId>
 			<artifactId>infoglue-cms</artifactId>
 		</dependency>
