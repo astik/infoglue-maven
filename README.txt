@@ -18,10 +18,14 @@
 			mvn install
 		- go to infoglue-root folder with a command line and install it
 			mvn install
-	3/ ECLIPSE (details below)
-		- import into eclipse infoglue-root as a maven project
+	3/ That's it =)
+		- you can go to infoglue-root/infoglue-webapp-cms and configure the properties : /src/main/filters/filter.properties
+		- launch tomcat when ready (right now, it is configured to use mysql ; jdbc driver is attached to tomcat) 
+			mvn tomcat:run
+		- go with you browser to http://localhost:8080/infoglue-webapps-cms
+	4 optionnal / ECLIPSE (details below)
+		- you can import into eclipse infoglue-root as a maven project
 		- it will be shown as multiple project, a project for a module 
-		- fix error if needed (see details)
 
 
 ------------------------------------------------
@@ -51,17 +55,4 @@ A maven project has been created for this : propertyset
 - velocity-1.7IGPatched
 - milton-api-1.5.4IGPatched
 
-All the others are maven dependencies fetch from central or atlasian repos.
-
-------------------------------------------------
-Details on the eclipse part of this install :
-
-You can find more info about the DateTickUnit note :
-http://sourceforge.net/tracker/index.php?func=detail&aid=1062698&group_id=15494&atid=365494
-http://sourceforge.net/tracker/index.php?func=detail&aid=1062703&group_id=15494&atid=365494
-
-If it's not the default configuration, set eclipse execution environment so "J2SE-1.5", so that, it would run on any 1.5 environment.
-	-> it would make some error during compilation :
-		dependencies on sun.misc.BASE64Decoder & BASE64Encoder => replace it with Base64 from commons.codec
-		DateTickUnit constructor come from an unoffical distrib of jfreechart, remove the third param to make it work
-		@override is use for interface which is not support with java 1.5 
+All the others are maven dependencies fetch from repositories listed into the parent pom.xml.

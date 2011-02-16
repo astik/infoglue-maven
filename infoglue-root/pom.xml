@@ -44,6 +44,7 @@
 		<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
 		<infoglue.version>0.0.1-SNAPSHOT</infoglue.version>
 		<pluto.version>1.0.1</pluto.version>
+		<slf4j.version>1.5.11</slf4j.version>
 	</properties>
 	<build>
 		<finalName>${project.artifactId}</finalName>
@@ -227,8 +228,8 @@
 			</dependency>
 			<dependency>
 				<groupId>commons-beanutils</groupId>
-				<artifactId>commons-beanutils-core</artifactId>
-				<version>1.8.0</version>
+				<artifactId>commons-beanutils</artifactId>
+				<version>1.8.3</version>
 			</dependency>
 			<dependency>
 				<groupId>commons-fileupload</groupId>
@@ -260,6 +261,11 @@
 				<groupId>commons-lang</groupId>
 				<artifactId>commons-lang</artifactId>
 				<version>2.4</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-collections</groupId>
+				<artifactId>commons-collections</artifactId>
+				<version>3.1</version>
 			</dependency>
 			<!-- ************************* DATABASE ************************* -->
 			<dependency>
@@ -459,6 +465,7 @@
 				<groupId>com.ettrema</groupId>
 				<artifactId>milton-servlet</artifactId>
 				<version>1.5.4</version>
+				<scope>runtime</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.netbeans.api</groupId>
@@ -617,6 +624,29 @@
 				<groupId>com.thebuzzmedia</groupId>
 				<artifactId>imgscalr-lib</artifactId>
 				<version>2.0</version>
+			</dependency>
+			<dependency>
+				<groupId>com.thebuzzmedia</groupId>
+				<artifactId>imgscalr-lib</artifactId>
+				<version>2.0</version>
+			</dependency>
+			<dependency>
+				<groupId>jaxen</groupId>
+				<artifactId>jaxen</artifactId>
+				<version>1.1</version>
+				<scope>runtime</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j12</artifactId>
+				<version>${slf4j.version}</version>
+				<scope>runtime</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4j.version}</version>
+				<scope>runtime</scope>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

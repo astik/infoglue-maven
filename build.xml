@@ -485,7 +485,7 @@
 			</fileset>
 		</copy>
 		<move tofile="${dst.path}/infoglue-root/infoglue-webapp-deliver/src/main/webappResources/WEB-INF/web.xml" file="${infoglue.conf.path}/deliver-web.xml" failonerror="false" />
-		<move tofile="${dst.path}/infoglue-root/infoglue-webapp-deliver/src/main/webapp/index.html" file="${infoglue.src.webapp.path}/index-deliver.html" failonerror="false" />
+		<move todir="${dst.path}/infoglue-root/infoglue-webapp-deliver/src/main/webapp/" file="${infoglue.src.webapp.path}/index-deliver.html" failonerror="false" />
 		<move todir="${dst.path}/infoglue-root/infoglue-webapp-deliver/src/main/resources/" file="${infoglue.conf.path}/deliver.properties" failonerror="false" />
 	</target>
 	<target name="install-infoglue-webapp-cms">
@@ -505,7 +505,7 @@
 				<include name="**/*" />
 			</fileset>
 		</copy>
-		<move tofile="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/webapp/index.html" file="${infoglue.src.webapp.path}/index-cms.html" failonerror="false" />
+		<move todir="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/webapp/" file="${infoglue.src.webapp.path}/index-cms.html" failonerror="false" />
 		<move todir="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/webapp/">
 			<fileset dir="${infoglue.src.webapp.path}">
 				<include name="**/*" />
@@ -522,5 +522,7 @@
 		<move todir="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/resources/" file="${infoglue.conf.path}/propertyset.xml" failonerror="false" />
 		<move todir="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/resources/" file="${infoglue.conf.path}/InfoGlueAuthorizationParameters.properties" failonerror="false" />
 		<move todir="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/resources/" file="${infoglue.conf.path}/quartz.properties" failonerror="false" />
+		<move todir="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/webapp/WEB-INF/" file="${infoglue.conf.path}/server-config.wsdd" failonerror="false" />
+		<move todir="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/resources/" file="${infoglue.conf.path}/osworkflow.xml" failonerror="false" />
 	</target>
 </project>
