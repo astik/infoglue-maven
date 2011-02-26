@@ -12,7 +12,7 @@
 		<delete dir="${dst.path}/infoglue-root" />
 	</target>
 	<target name="install">
-		<!--
+<!--
 		<antcall target="reset-install-infoglue-cms" />
 -->
 		<antcall target="install-base-project-from-plain-folder" />
@@ -172,6 +172,13 @@
 		<move todir="${dst.path}/infoglue-root/infoglue-actions/src/main/resources/${subpath3}">
 			<fileset dir="${infoglue.src.java.path}/${subpath3}">
 				<include name="defaultContentTypeDefinition.xml" />
+			</fileset>
+		</move>
+		<property name="subpath4" value="org/infoglue/cms" />
+		<move todir="${dst.path}/infoglue-root/infoglue-actions/src/main/java/${subpath4}">
+			<fileset dir="${infoglue.test.java.path}/${subpath4}">
+				<include name="**/InstallationValidatorAction.java" />
+				<include name="**/ValidationItem.java" />
 			</fileset>
 		</move>
 	</target>
