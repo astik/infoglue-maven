@@ -136,14 +136,6 @@
 			<artifactId>jfreechart</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>oro</groupId>
 			<artifactId>oro</artifactId>
 		</dependency>

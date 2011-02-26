@@ -45,6 +45,7 @@
 		<infoglue.version>0.0.1-SNAPSHOT</infoglue.version>
 		<pluto.version>1.0.1</pluto.version>
 		<slf4j.version>1.5.11</slf4j.version>
+		<maven-taglib-plugin.version>2.4</maven-taglib-plugin.version>
 	</properties>
 	<build>
 		<finalName>${project.artifactId}</finalName>
@@ -136,7 +137,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-site-plugin</artifactId>
-					<version>2.1.1</version>
+					<version>3.0-beta-3</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -146,20 +147,12 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-surefire-plugin</artifactId>
-					<version>2.6</version>
+					<version>2.7.2</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-war-plugin</artifactId>
-					<version>2.1</version>
-				</plugin>
-				<plugin>
-					<groupId>net.sourceforge.maven-taglib</groupId>
-					<artifactId>maven-taglib-plugin</artifactId>
-					<version>2.4</version>
-					<configuration>
-						<taglib.src.dir>src/main/webapp/WEB-INF/tld</taglib.src.dir>
-					</configuration>
+					<version>2.1.1</version>
 				</plugin>
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
@@ -619,11 +612,6 @@
 				<groupId>opensymphony</groupId>
 				<artifactId>propertyset</artifactId>
 				<version>1.4</version>
-			</dependency>
-			<dependency>
-				<groupId>com.thebuzzmedia</groupId>
-				<artifactId>imgscalr-lib</artifactId>
-				<version>2.0</version>
 			</dependency>
 			<dependency>
 				<groupId>com.thebuzzmedia</groupId>

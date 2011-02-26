@@ -9,6 +9,7 @@
 		- Then it will copy the source from the infoglue project into the right folder of the maven2 architecture
 	=> You have now a working maven2 project : infoglue-root 	
 	2/ MAVEN (details below)
+		You'll need maven3 (which is faster and compatible with maven2).
 		If you just start with maven, it may takes some time at first as it have to grab all the needed lib
 		- go to infoglue-root/propertyset folder with a command line and install it
 			mvn install
@@ -56,3 +57,9 @@ A maven project has been created for this : propertyset
 - milton-api-1.5.4IGPatched
 
 All the others are maven dependencies fetch from repositories listed into the parent pom.xml.
+
+
+------------------------------------------------
+To see new version of artefact, use :
+mvn versions:display-plugin-updates
+mvn versions:display-dependency-updates
