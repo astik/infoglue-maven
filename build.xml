@@ -423,6 +423,9 @@
 				<include name="**/*.properties" />
 				<include name="**/*.xml" />
 			</fileset>
+			<fileset dir="${infoglue.conf.path}">
+				<include name="**/xml_mapping_*" />
+			</fileset>
 		</move>
 		<property name="subpath" value="org/infoglue/cms/util" />
 		<move todir="${dst.path}/infoglue-root/infoglue-cms/src/main/java/${subpath}">
@@ -491,6 +494,11 @@
 				<include name="**/*.tld" />
 			</fileset>
 		</copy>
+		<copy todir="${dst.path}/infoglue-root/infoglue-webapp-deliver/src/main/webapp/META-INF">
+			<fileset dir="${infoglue.conf.path}">
+				<include name="context.xml" />
+			</fileset>
+		</copy>
 		<move tofile="${dst.path}/infoglue-root/infoglue-webapp-deliver/src/main/webappResources/WEB-INF/web.xml" file="${infoglue.conf.path}/deliver-web.xml" failonerror="false" />
 		<move todir="${dst.path}/infoglue-root/infoglue-webapp-deliver/src/main/webapp/" file="${infoglue.src.webapp.path}/index-deliver.html" failonerror="false" />
 		<move todir="${dst.path}/infoglue-root/infoglue-webapp-deliver/src/main/resources/" file="${infoglue.conf.path}/deliver.properties" failonerror="false" />
@@ -518,6 +526,11 @@
 				<include name="**/*" />
 			</fileset>
 		</move>
+		<copy todir="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/webapp/META-INF">
+			<fileset dir="${infoglue.conf.path}">
+				<include name="context.xml" />
+			</fileset>
+		</copy>
 		<move tofile="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/webappResources/WEB-INF/web.xml" file="${infoglue.conf.path}/cms-web.xml" failonerror="false" />
 		<move todir="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/resources/" file="${infoglue.conf.path}/cms/jobs.xml" failonerror="false" />
 		<move todir="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/resources/" file="${infoglue.conf.path}/cms/webwork.properties" failonerror="false" />
