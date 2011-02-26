@@ -654,6 +654,18 @@
 				<version>10.2.0.4</version>
 				<scope>provided</scope>
 			</dependency>
+			<dependency>
+				<groupId>odmg</groupId>
+				<artifactId>odmg</artifactId>
+				<version>3.0</version>
+				<scope>runtime</scope>
+			</dependency>
+			<dependency>
+				<groupId>net.sf.ehcache</groupId>
+				<artifactId>ehcache</artifactId>
+				<version>1.6.2</version>
+				<scope>runtime</scope>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 	<!-- TODO developers -->
