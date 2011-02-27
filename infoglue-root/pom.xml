@@ -464,7 +464,6 @@
 				<groupId>com.ettrema</groupId>
 				<artifactId>milton-servlet</artifactId>
 				<version>1.5.4</version>
-				<scope>runtime</scope>
 				<exclusions>
 					<exclusion>
 						<groupId>medsea</groupId>
