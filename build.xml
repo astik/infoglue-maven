@@ -534,7 +534,7 @@
 				<include name="context.xml" />
 			</fileset>
 		</copy>
-		<move tofile="${dst.path}/infoglue-root/infoglue-webapp-deliver/src/main/webappResources/WEB-INF/web.xml" file="${infoglue.conf.path}/deliver-web.xml" failonerror="false" />
+		<move tofile="${dst.path}/infoglue-root/infoglue-webapp-deliver/src/main/resources/WEB-INF/web.xml" file="${infoglue.conf.path}/deliver-web.xml" failonerror="false" />
 		<move todir="${dst.path}/infoglue-root/infoglue-webapp-deliver/src/main/resources/" file="${infoglue.conf.path}/deliver/jobs.xml" failonerror="false" />
 		<move todir="${dst.path}/infoglue-root/infoglue-webapp-deliver/src/main/resources/" file="${infoglue.conf.path}/deliver/webwork.properties" failonerror="false" />
 		<move todir="${dst.path}/infoglue-root/infoglue-webapp-deliver/src/main/resources/" file="${infoglue.conf.path}/deliver/actions.xml" failonerror="false" />
@@ -583,7 +583,7 @@
 				<include name="context.xml" />
 			</fileset>
 		</copy>
-		<move tofile="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/webappResources/WEB-INF/web.xml" file="${infoglue.conf.path}/cms-web.xml" failonerror="false" />
+		<move tofile="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/resources/WEB-INF/web.xml" file="${infoglue.conf.path}/cms-web.xml" failonerror="false" />
 		<move todir="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/resources/" file="${infoglue.conf.path}/cms/jobs.xml" failonerror="false" />
 		<move todir="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/resources/" file="${infoglue.conf.path}/cms/webwork.properties" failonerror="false" />
 		<move todir="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/resources/" file="${infoglue.conf.path}/cms/actions.xml" failonerror="false" />
