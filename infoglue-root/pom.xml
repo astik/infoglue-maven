@@ -605,7 +605,11 @@
 				<version>${infoglue.version}</version>
 			</dependency>
 			<!-- infoglue-deliver-services -->
-			<!-- infoglue-deliver-taglib -->
+			<dependency>
+				<groupId>org.infoglue</groupId>
+				<artifactId>infoglue-deliver-taglib</artifactId>
+				<version>${infoglue.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>org.infoglue</groupId>
 				<artifactId>infoglue-deliver-util-rss</artifactId>
@@ -670,6 +674,18 @@
 				<groupId>net.sf.ehcache</groupId>
 				<artifactId>ehcache</artifactId>
 				<version>1.6.2</version>
+				<scope>runtime</scope>
+			</dependency>
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>jstl</artifactId>
+				<version>1.2</version>
+				<scope>runtime</scope>
+			</dependency>
+			<dependency>
+				<groupId>taglibs</groupId>
+				<artifactId>mailer</artifactId>
+				<version>1.1</version>
 				<scope>runtime</scope>
 			</dependency>
 		</dependencies>
