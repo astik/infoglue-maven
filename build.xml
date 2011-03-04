@@ -136,6 +136,7 @@
 				<include name="**/*.java" />
 			</fileset>
 		</move>
+		<move todir="${dst.path}/infoglue-root/infoglue-deliver-jobs/src/main/resources/" file="${infoglue.conf.path}/quartz.properties" failonerror="false" />
 	</target>
 	<target name="install-infoglue-cms-treeservice">
 		<echo message="Installing infoglue-cms-treeservice" />
@@ -527,6 +528,7 @@
 				<include name="images/v3/stack.png" />
 				<include name="cms/managementtool/viewLogging.vm" />
 				<include name="jsp/**" />
+				<include name="images/downArrow.gif" />
 			</fileset>
 		</copy>
 		<copy todir="${dst.path}/infoglue-root/infoglue-webapp-deliver/src/main/webapp/META-INF">
@@ -548,7 +550,6 @@
 		<copy todir="${dst.path}/infoglue-root/infoglue-webapp-deliver/src/main/resources/" file="${infoglue.conf.path}/hibernate.cfg.xml" failonerror="false" />
 		<copy todir="${dst.path}/infoglue-root/infoglue-webapp-deliver/src/main/resources/" file="${infoglue.conf.path}/propertyset.xml" failonerror="false" />
 		<copy todir="${dst.path}/infoglue-root/infoglue-webapp-deliver/src/main/resources/" file="${infoglue.conf.path}/InfoGlueAuthorizationParameters.properties" failonerror="false" />
-		<copy todir="${dst.path}/infoglue-root/infoglue-webapp-deliver/src/main/resources/" file="${infoglue.conf.path}/quartz.properties" failonerror="false" />
 		<!--
 		<move todir="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/webapp/WEB-INF/" file="${infoglue.conf.path}/server-config.wsdd" failonerror="false" />
 		<move todir="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/resources/" file="${infoglue.conf.path}/osworkflow.xml" failonerror="false" />
@@ -595,7 +596,6 @@
 		<copy todir="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/resources/" file="${infoglue.conf.path}/hibernate.cfg.xml" failonerror="false" />
 		<copy todir="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/resources/" file="${infoglue.conf.path}/propertyset.xml" failonerror="false" />
 		<copy todir="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/resources/" file="${infoglue.conf.path}/InfoGlueAuthorizationParameters.properties" failonerror="false" />
-		<copy todir="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/resources/" file="${infoglue.conf.path}/quartz.properties" failonerror="false" />
 		<move todir="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/webapp/WEB-INF/" file="${infoglue.conf.path}/server-config.wsdd" failonerror="false" />
 		<move todir="${dst.path}/infoglue-root/infoglue-webapp-cms/src/main/resources/" file="${infoglue.conf.path}/osworkflow.xml" failonerror="false" />
 	</target>

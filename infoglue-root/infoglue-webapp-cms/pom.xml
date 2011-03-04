@@ -23,35 +23,21 @@
 		</plugins>
 	</reporting>
 	<build>
+		<finalName>infoglueCMS</finalName>
 		<plugins>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>maven-jetty-plugin</artifactId>
 				<configuration>
-					<filters>
-						<filter>${basedir}/src/main/filters/filter.properties</filter>
-					</filters>
-					<webResources>
-						<resource>
-							<filtering>true</filtering>
-							<directory>src/main/webappResources</directory>
-						</resource>
-					</webResources>
+					<scanIntervalSeconds>10</scanIntervalSeconds>
+					<contextPath>/infoglueCMS</contextPath>
+					<contextHandlers>
+						<contextHandler implementation="org.mortbay.jetty.webapp.WebAppContext">
+							<war>../infoglue-webapp-deliver/target/infoglueDeliverWorking.war</war>
+							<contextPath>/infoglueDeliverWorking</contextPath>
+						</contextHandler>
+					</contextHandlers>
 				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>tomcat-maven-plugin</artifactId>
-				<configuration>
-					<warSourceDirectory>target/${project.artifactId}</warSourceDirectory>
-				</configuration>
-				<dependencies>
-					<dependency>
-						<groupId>mysql</groupId>
-						<artifactId>mysql-connector-java</artifactId>
-						<version>5.1.14</version>
-					</dependency>
-				</dependencies>
 			</plugin>
 		</plugins>
 		<filters>
