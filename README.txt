@@ -4,11 +4,7 @@
 		- get the latest sources from GIT (https://github.com/bogeblad/infoglue/zipball/master ; the tarball doesn't seem to contain the test folder ...)
 		- unzip archive into build folder and rename the extracted archive (bogeblad-infoglue-****) : infoglue
 	=> you have now infoglue sources available here /build/infoglue
-	1/ ANT (details below)
-		- It will deploy the maven2 architecture (project infoglue-root and submodule)
-		- Then it will copy the source from the infoglue project into the right folder of the maven2 architecture
-	=> You have now a working maven2 project : infoglue-root 	
-	2/ MAVEN (details below)
+	2/ MAVEN - step1 (details below)
 		You'll need maven3 (which is faster and compatible with maven2).
 		If you just start with maven, it may takes some time at first as it have to grab all the needed lib
 		- go to infoglue-root/propertyset folder with a command line and install it
@@ -17,14 +13,19 @@
 			mvn install
 		- go to infoglue-root/velocity folder with a command line and install it
 			mvn install
+	2/ ANT (details below)
+		- It will deploy the maven2 architecture (project infoglue-root and submodule)
+		- Then it will copy the source from the infoglue project into the right folder of the maven2 architecture
+	=> You have now a working maven2 project : infoglue-root 	
+	3/ MAVEN (details below)
 		- go to infoglue-root folder with a command line and install it
 			mvn install
-	3/ That's it =)
+	4/ That's it =)
 		- you can go to infoglue-root/infoglue-webapp-cms and configure the properties : /src/main/filters/filter.properties
 		- launch tomcat when ready (right now, it is configured to use mysql ; jdbc driver is attached to tomcat) 
 			mvn tomcat:run
 		- go with you browser to http://localhost:8080/infoglue-webapps-cms
-	4 optionnal / ECLIPSE (details below)
+	5 optionnal / ECLIPSE (details below)
 		- you can import into eclipse infoglue-root as a maven project
 		- it will be shown as multiple project, a project for a module 
 
@@ -47,7 +48,7 @@ Details on the ant part of this install :
 
 
 ------------------------------------------------
-Details on the maven part of this install :
+Details on the "maven step1" part of this install :
 
 One particular jar, propertyset-1.4 is not available as a build, it is only available as a tag in openymphony svn.
 A maven project has been created for this : propertyset

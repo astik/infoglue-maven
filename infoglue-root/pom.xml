@@ -6,46 +6,18 @@
 	<packaging>pom</packaging>
 	<name>Infoglue parent</name>
 	<version>0.0.1-SNAPSHOT</version>
+	<prerequisites>
+		<maven>3.0</maven>
+	</prerequisites>
 	<modules>
-		<module>infoglue-cms-io</module>
-		<module>infoglue-cms-net</module>
-		<module>infoglue-cms-util-graphics</module>
-		<module>infoglue-common</module>
-		<module>infoglue-taglib</module>
-		<module>infoglue-cms</module>
-		<module>infoglue-cms-controllers-usecases</module>
-		<module>infoglue-cms-treeservice</module>
-		<module>infoglue-inputhandlers</module>
-		<module>infoglue-cms-jobs</module>
-		<module>infoglue-deliver-portal</module>
-		<module>infoglue-actions</module>
-		<module>infoglue-cms-interceptors</module>
-		<module>infoglue-cms-security</module>
-		<module>infoglue-cms-webservices</module>
-		<module>infoglue-cms-workflow</module>
-		<module>infoglue-cms-taglib</module>
-		<module>infoglue-deliver-jobs</module>
-		<module>infoglue-deliver-services</module>
-		<module>infoglue-deliver-util-webloggers</module>
-		<module>infoglue-deliver-taglib</module>
-		<module>infoglue-webapp-deliver</module>
+		<module>infoglue-java</module>
 		<module>infoglue-webapp-cms</module>
-		<!-- <module>infoglue-test</module> -->
-		<module>infoglue-cms-applications-databeans</module>
-		<module>infoglue-cms-exception</module>
-		<module>infoglue-common-util-cvsclient</module>
-		<module>infoglue-cms-util-css</module>
-		<module>infoglue-cms-util-dom</module>
-		<module>infoglue-cms-util-webdav</module>
-		<module>infoglue-common-webappintegrator</module>
-		<module>infoglue-deliver-util-rss</module>
 	</modules>
 	<properties>
 		<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
 		<infoglue.version>0.0.1-SNAPSHOT</infoglue.version>
 		<pluto.version>1.0.1</pluto.version>
 		<slf4j.version>1.5.11</slf4j.version>
-		<maven-taglib-plugin.version>2.4</maven-taglib-plugin.version>
 	</properties>
 	<build>
 		<finalName>${project.artifactId}</finalName>
@@ -112,7 +84,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-resources-plugin</artifactId>
-					<version>2.4.3</version>
+					<version>2.5</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -122,7 +94,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-deploy-plugin</artifactId>
-					<version>2.5</version>
+					<version>2.7</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -137,22 +109,22 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-site-plugin</artifactId>
-					<version>3.0-beta-3</version>
+					<version>3.0</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-jar-plugin</artifactId>
-					<version>2.3.1</version>
+					<version>2.4</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-surefire-plugin</artifactId>
-					<version>2.7.2</version>
+					<version>2.12</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-war-plugin</artifactId>
-					<version>2.1.1</version>
+					<version>2.2</version>
 				</plugin>
 				<plugin>
 					<groupId>org.mortbay.jetty</groupId>
@@ -177,6 +149,11 @@
 							<version>5.1.14</version>
 						</dependency>
 					</dependencies>
+				</plugin>
+				<plugin>
+					<groupId>net.sourceforge.maven-taglib</groupId>
+					<artifactId>maven-taglib-plugin</artifactId>
+					<version>2.4</version>
 				</plugin>
 			</plugins>
 		</pluginManagement>
@@ -496,148 +473,6 @@
 				<version>1.3</version>
 				<scope>runtime</scope>
 			</dependency>
-			<!-- ************************* INFOGLUE ************************* -->
-			<dependency>
-				<groupId>org.infoglue</groupId>
-				<artifactId>infoglue-actions</artifactId>
-				<version>${infoglue.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.infoglue</groupId>
-				<artifactId>infoglue-cms</artifactId>
-				<version>${infoglue.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.infoglue</groupId>
-				<artifactId>infoglue-cms-applications-databeans</artifactId>
-				<version>${infoglue.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.infoglue</groupId>
-				<artifactId>infoglue-cms-controllers-usecases</artifactId>
-				<version>${infoglue.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.infoglue</groupId>
-				<artifactId>infoglue-cms-exception</artifactId>
-				<version>${infoglue.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.infoglue</groupId>
-				<artifactId>infoglue-cms-interceptors</artifactId>
-				<version>${infoglue.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.infoglue</groupId>
-				<artifactId>infoglue-cms-io</artifactId>
-				<version>${infoglue.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.infoglue</groupId>
-				<artifactId>infoglue-cms-jobs</artifactId>
-				<version>${infoglue.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.infoglue</groupId>
-				<artifactId>infoglue-cms-net</artifactId>
-				<version>${infoglue.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.infoglue</groupId>
-				<artifactId>infoglue-cms-security</artifactId>
-				<version>${infoglue.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.infoglue</groupId>
-				<artifactId>infoglue-cms-taglib</artifactId>
-				<version>${infoglue.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.infoglue</groupId>
-				<artifactId>infoglue-cms-treeservice</artifactId>
-				<version>${infoglue.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.infoglue</groupId>
-				<artifactId>infoglue-cms-util-css</artifactId>
-				<version>${infoglue.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.infoglue</groupId>
-				<artifactId>infoglue-cms-util-dom</artifactId>
-				<version>${infoglue.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.infoglue</groupId>
-				<artifactId>infoglue-cms-util-graphics</artifactId>
-				<version>${infoglue.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.infoglue</groupId>
-				<artifactId>infoglue-cms-util-webdav</artifactId>
-				<version>${infoglue.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.infoglue</groupId>
-				<artifactId>infoglue-cms-webservices</artifactId>
-				<version>${infoglue.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.infoglue</groupId>
-				<artifactId>infoglue-cms-workflow</artifactId>
-				<version>${infoglue.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.infoglue</groupId>
-				<artifactId>infoglue-common</artifactId>
-				<version>${infoglue.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.infoglue</groupId>
-				<artifactId>infoglue-common-util-cvsclient</artifactId>
-				<version>${infoglue.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.infoglue</groupId>
-				<artifactId>infoglue-common-webappintegrator</artifactId>
-				<version>${infoglue.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.infoglue</groupId>
-				<artifactId>infoglue-deliver-jobs</artifactId>
-				<version>${infoglue.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.infoglue</groupId>
-				<artifactId>infoglue-deliver-portal</artifactId>
-				<version>${infoglue.version}</version>
-			</dependency>
-			<!-- infoglue-deliver-services -->
-			<dependency>
-				<groupId>org.infoglue</groupId>
-				<artifactId>infoglue-deliver-taglib</artifactId>
-				<version>${infoglue.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.infoglue</groupId>
-				<artifactId>infoglue-deliver-util-rss</artifactId>
-				<version>${infoglue.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.infoglue</groupId>
-				<artifactId>infoglue-deliver-util-webloggers</artifactId>
-				<version>${infoglue.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.infoglue</groupId>
-				<artifactId>infoglue-inputhandlers</artifactId>
-				<version>${infoglue.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.infoglue</groupId>
-				<artifactId>infoglue-taglib</artifactId>
-				<version>${infoglue.version}</version>
-			</dependency>
 			<dependency>
 				<groupId>opensymphony</groupId>
 				<artifactId>propertyset</artifactId>
@@ -695,6 +530,12 @@
 				<artifactId>mailer</artifactId>
 				<version>1.1</version>
 				<scope>runtime</scope>
+			</dependency>
+			<!-- ************************* INFOGLUE ************************* -->
+			<dependency>
+				<groupId>org.infoglue</groupId>
+				<artifactId>infoglue-java</artifactId>
+				<version>${infoglue.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
