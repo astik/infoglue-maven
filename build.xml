@@ -16,6 +16,12 @@
 		<move todir="${dst.path}/${base.path.folder}/infoglue-webapp-cms/src/main/webapp/">
 			<fileset dir="${infoglue.src.webapp.path}/" />
 		</move>
+		<move tofile="${dst.path}/${base.path.folder}/infoglue-webapp-cms/src/main/webapp/WEB-INF/web.xml" failonerror="false">
+			<fileset file="${infoglue.conf.path}/cms-web.xml" />
+		</move>
+		<move todir="${dst.path}/${base.path.folder}/infoglue-webapp-cms/src/main/webapp/META-INF/">
+			<fileset file="${infoglue.conf.path}/context.xml" />
+		</move>
 	</target>
 	<target name="install-infoglue-java">
 		<echo message="Installing infoglue-java" />
@@ -39,6 +45,7 @@
 				<include name="**/FakeFilterConfig.java" />
 			</fileset>
 		</move>
+		<!--
 		<move todir="${dst.path}/${base.path.folder}/infoglue-java/src/test/java/">
 			<fileset dir="${infoglue.test.java.path}/">
 				<include name="**/*.java" />
@@ -50,6 +57,7 @@
 				<include name="**/*.properties" />
 			</fileset>
 		</move>
+		-->
 	</target>
 	<target name="install-infoglue-maven-structure">
 		<echo message="Installing infoglue-maven-structure" />
