@@ -4,17 +4,30 @@
     </description>
 	<property file="build.properties" />
 	<target name="install">
-		<!--
+<!--
 		<antcall target="reset-install" />
 -->
 		<antcall target="install-infoglue-maven-structure" />
+		<antcall target="install-infoglue-webapp-cms" />
 		<antcall target="install-infoglue-java" />
+	</target>
+	<target name="install-infoglue-webapp-cms">
+		<echo message="Installing infoglue-webapp-cms" />
+		<move todir="${dst.path}/${base.path.folder}/infoglue-webapp-cms/src/main/webapp/">
+			<fileset dir="${infoglue.src.webapp.path}/" />
+		</move>
 	</target>
 	<target name="install-infoglue-java">
 		<echo message="Installing infoglue-java" />
 		<move todir="${dst.path}/${base.path.folder}/infoglue-java/src/main/java/">
 			<fileset dir="${infoglue.src.java.path}/">
 				<include name="**/*.java" />
+			</fileset>
+		</move>
+		<move todir="${dst.path}/${base.path.folder}/infoglue-java/src/main/resources/">
+			<fileset dir="${infoglue.src.java.path}/">
+				<include name="**/*.xml" />
+				<include name="**/*.properties" />
 			</fileset>
 		</move>
 		<move todir="${dst.path}/${base.path.folder}/infoglue-java/src/main/java/">
@@ -24,6 +37,17 @@
 				<include name="**/FakeHttpSession.java" />
 				<include name="**/FakeServletContext.java" />
 				<include name="**/FakeFilterConfig.java" />
+			</fileset>
+		</move>
+		<move todir="${dst.path}/${base.path.folder}/infoglue-java/src/test/java/">
+			<fileset dir="${infoglue.test.java.path}/">
+				<include name="**/*.java" />
+			</fileset>
+		</move>
+		<move todir="${dst.path}/${base.path.folder}/infoglue-java/src/test/resources/">
+			<fileset dir="${infoglue.test.java.path}/">
+				<include name="**/*.xml" />
+				<include name="**/*.properties" />
 			</fileset>
 		</move>
 	</target>
