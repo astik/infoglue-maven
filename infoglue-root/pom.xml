@@ -19,6 +19,7 @@
 		<infoglue.version>0.0.1-SNAPSHOT</infoglue.version>
 		<pluto.version>1.0.1</pluto.version>
 		<slf4j.version>1.5.11</slf4j.version>
+		<maven-taglib-plugin.version>2.4</maven-taglib-plugin.version>
 	</properties>
 	<build>
 		<finalName>${project.artifactId}</finalName>
@@ -150,11 +151,6 @@
 							<version>5.1.14</version>
 						</dependency>
 					</dependencies>
-				</plugin>
-				<plugin>
-					<groupId>net.sourceforge.maven-taglib</groupId>
-					<artifactId>maven-taglib-plugin</artifactId>
-					<version>2.4</version>
 				</plugin>
 			</plugins>
 		</pluginManagement>
@@ -547,6 +543,12 @@
 				<groupId>org.infoglue</groupId>
 				<artifactId>infoglue-webapp-cms</artifactId>
 				<version>${infoglue.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.10</version>
+				<scope>test</scope>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
